@@ -1,0 +1,1205 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services — Delta SaaS SEO Agency</title>
+    <meta
+      name="description"
+      content="Delta's SaaS SEO services: technical SEO, bottom-funnel content, link building, and on-page SEO — all tied to trial signups and MRR, not vanity metrics."
+    />
+    <link rel="icon" type="image/png" href="./assets/delta-favicon.png" />
+    <link rel="canonical" href="https://letdelta.com/services" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Geist:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .svc-detail {
+        border: 1px solid var(--border);
+        border-radius: var(--rl);
+        overflow: hidden;
+        margin-bottom: 2px;
+      }
+      .svc-detail-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 28px 32px;
+        cursor: pointer;
+        user-select: none;
+        transition: background 0.2s;
+      }
+      .svc-detail-head:hover {
+        background: var(--bg-1);
+      }
+      .svc-detail-head .num {
+        font-family: var(--fh);
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--accent);
+        letter-spacing: 0.08em;
+        margin-right: 16px;
+      }
+      .svc-detail-head h3 {
+        flex: 1;
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--white);
+        font-family: var(--fh);
+        letter-spacing: -0.01em;
+      }
+      .svc-detail-head .arrow {
+        width: 28px;
+        height: 28px;
+        border: 1px solid var(--bh);
+        border-radius: 7px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--t3);
+        transition:
+          transform 0.25s,
+          border-color 0.2s;
+        flex-shrink: 0;
+      }
+      .svc-detail[open] .svc-detail-head .arrow {
+        transform: rotate(45deg);
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+      .svc-detail-body {
+        padding: 0 32px 28px;
+        border-top: 1px solid var(--border);
+      }
+      .svc-detail-body p {
+        font-size: 13px;
+        color: var(--t2);
+        line-height: 1.8;
+        font-weight: 300;
+        margin-top: 20px;
+        margin-bottom: 16px;
+      }
+      .svc-detail-body .del-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-top: 16px;
+      }
+      .del-item {
+        background: var(--bg-2);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 14px 16px;
+      }
+      .del-item .di-label {
+        font-size: 11px;
+        font-weight: 600;
+        color: var(--accent);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+      }
+      .del-item .di-text {
+        font-size: 12px;
+        color: var(--t2);
+        line-height: 1.6;
+        font-weight: 300;
+      }
+      .scope-note {
+        background: rgba(59, 130, 246, 0.04);
+        border: 1px solid rgba(59, 130, 246, 0.15);
+        border-radius: 10px;
+        padding: 14px 18px;
+        margin-top: 16px;
+        font-size: 12px;
+        color: var(--t2);
+        line-height: 1.7;
+        font-weight: 300;
+      }
+      .scope-note strong {
+        color: #93c5fd;
+        font-weight: 600;
+      }
+      .process-step {
+        display: flex;
+        gap: 20px;
+        padding: 28px 0;
+        border-bottom: 1px solid var(--border);
+      }
+      .process-step:last-child {
+        border-bottom: none;
+      }
+      .step-num {
+        width: 36px;
+        height: 36px;
+        border: 1px solid var(--bh);
+        border-radius: 9px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--fh);
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--accent);
+        flex-shrink: 0;
+      }
+      .step-content h4 {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--white);
+        font-family: var(--fh);
+        margin-bottom: 6px;
+      }
+      .step-content p {
+        font-size: 13px;
+        color: var(--t2);
+        line-height: 1.75;
+        font-weight: 300;
+      }
+      .fit-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      .fit-card {
+        border: 1px solid var(--border);
+        border-radius: var(--r);
+        padding: 20px 22px;
+      }
+      .fit-card.yes {
+        border-color: rgba(34, 197, 94, 0.18);
+        background: rgba(34, 197, 94, 0.03);
+      }
+      .fit-card.no {
+        border-color: rgba(248, 113, 113, 0.18);
+        background: rgba(248, 113, 113, 0.03);
+      }
+      .fit-title {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+      }
+      .fit-card.yes .fit-title {
+        color: var(--green);
+      }
+      .fit-card.no .fit-title {
+        color: var(--red);
+      }
+      .fit-row {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 6px 0;
+        border-bottom: 1px solid var(--border);
+        font-size: 12px;
+        color: var(--t2);
+        line-height: 1.6;
+      }
+      .fit-row:last-child {
+        border-bottom: none;
+      }
+      .fit-ic {
+        flex-shrink: 0;
+        margin-top: 1px;
+        font-size: 11px;
+      }
+      .fit-card.yes .fit-ic {
+        color: var(--green);
+      }
+      .fit-card.no .fit-ic {
+        color: var(--red);
+      }
+      @media (max-width: 680px) {
+        .svc-detail-body .del-grid {
+          grid-template-columns: 1fr;
+        }
+        .fit-grid {
+          grid-template-columns: 1fr;
+        }
+        .svc-detail-head {
+          padding: 20px 18px;
+        }
+        .svc-detail-body {
+          padding: 0 18px 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="cursor-glow"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+
+    <nav id="nav">
+      <div class="nav-inner">
+        <a href="/" class="logo">
+          <div class="logo-icon">
+            <svg width="13" height="11" viewBox="0 0 13 11" fill="none">
+              <path d="M6.5 0.5L12.5 10.5H0.5L6.5 0.5Z" fill="#080808" />
+            </svg>
+          </div>
+          <span class="logo-name">Delta</span>
+        </a>
+        <ul class="nav-links">
+          <li>
+            <a href="./services.html" style="color: var(--white)">Services</a>
+          </li>
+          <li><a href="./how-it-works.html">How It Works</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./blog/index.html">Blog</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-right">
+          <a
+            href="./audit.html"
+            class="btn btn-primary"
+            style="padding: 8px 16px; font-size: 12px"
+          >
+            Free SEO Audit
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+              <path
+                d="M1.5 5.5h8M6.5 2.5l3 3-3 3"
+                stroke="currentColor"
+                stroke-width="1.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+        </div>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="./services.html">Services</a>
+      <a href="./how-it-works.html">How It Works</a>
+      <a href="./about.html">About</a>
+      <a href="./blog/index.html">Blog</a>
+      <a href="./contact.html">Contact</a>
+      <a href="./audit.html" class="btn btn-primary">
+        Free SEO Audit
+        <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+          <path
+            d="M1.5 5.5h8M6.5 2.5l3 3-3 3"
+            stroke="currentColor"
+            stroke-width="1.4"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </a>
+    </div>
+
+    <!-- PAGE HERO -->
+    <section style="padding-top: 140px; padding-bottom: 64px">
+      <div class="wrap">
+        <div class="rev" style="max-width: 680px">
+          <span class="label" style="display: block; margin-bottom: 16px"
+            >Services</span
+          >
+          <h1
+            class="h2"
+            style="font-size: clamp(32px, 4vw, 52px); margin-bottom: 18px"
+          >
+            Everything your SaaS needs<br />to own organic search.
+          </h1>
+          <p class="lead">
+            One service. Built in phases. All of it tied to trial signups and
+            MRR — not rankings, not traffic, not impressions. If it doesn't move
+            revenue, we don't do it.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <hr />
+
+    <!-- WHAT'S INCLUDED — EXPANDABLE -->
+    <section>
+      <div class="wrap">
+        <div class="sh rev" style="margin-bottom: 36px">
+          <span class="label">What's Included</span>
+          <h2 class="h2" style="margin-bottom: 12px">
+            Built in phases.<br />One revenue outcome.
+          </h2>
+          <p class="lead" style="max-width: 520px">
+            These five components build on each other in phases. The first four
+            run from Month 1. Link building is added at Month 4 — once your
+            content foundation is strong enough for links to actually move
+            rankings.
+          </p>
+        </div>
+
+        <div class="rev">
+          <details class="svc-detail" open>
+            <summary class="svc-detail-head">
+              <span class="num">01</span>
+              <h3>Keyword Research &amp; Content Strategy</h3>
+              <div class="arrow">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                  <path
+                    d="M5 1v8M1 5h8"
+                    stroke="currentColor"
+                    stroke-width="1.4"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+            </summary>
+            <div class="svc-detail-body">
+              <p>
+                Before writing a single word, we map every keyword your ideal
+                customer searches at the moment they're closest to buying — not
+                awareness searches, not generic industry terms. We specifically
+                find competitor alternative keywords, direct comparison
+                keywords, and use-case keywords. These are the searches that
+                convert into trials.
+              </p>
+              <div class="del-grid">
+                <div class="del-item">
+                  <div class="di-label">Deliverable</div>
+                  <div class="di-text">
+                    Keyword map organised by funnel stage, search intent, search
+                    volume, and revenue priority
+                  </div>
+                </div>
+                <div class="del-item">
+                  <div class="di-label">Deliverable</div>
+                  <div class="di-text">
+                    3-month content calendar — exact page to write, target
+                    keyword, and why it was prioritised
+                  </div>
+                </div>
+                <div class="del-item">
+                  <div class="di-label">Deliverable</div>
+                  <div class="di-text">
+                    Competitor gap analysis — keywords your top 3 competitors
+                    rank for that you don't
+                  </div>
+                </div>
+                <div class="del-item">
+                  <div class="di-label">Timing</div>
+                  <div class="di-text">
+                    Delivered end of Week 2 — before any content is written
+                  </div>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <details class="svc-detail">
+            <summary class="svc-detail-head">
+              <span class="num">02</span>
+              <h3>Bottom-Funnel Content Production</h3>
+              <div class="arrow">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                  <path
+                    d="M5 1v8M1 5h8"
+                    stroke="currentColor"
+                    stroke-width="1.4"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+            </summary>
+            <div class="svc-detail-body">
+              <p>
+                We write 3-4 high-intent pages every month — the specific page
+                types that capture visitors who are already in buying mode.
+                These are not blog posts about industry trends. They are
+                commercially focused pages designed to rank for purchase-intent
+                searches and convert readers into trial signups.
+              </p>
+              <div class="del-grid">
+                <div class="del-item">
+                  <div class="di-label">Page Type 1</div>
+                  <div class="di-text">
+                    Competitor alternative pages — captures users actively
+                    looking to leave a competitor tool
+                  </div>
+                </div>
+                <div class="del-item">
+                  <div class="di-label">Page Type 2</div>
+                  <div class="di-text">
+                    Comparison pages — "[Your Tool] vs [Competitor]" — captures
+                    users in final decision stage
+                  </div>
+                </div>
+                <div class="del-item">
+                  <div class="di-label">Page Type 3</div>
+                  <div class="di-text">
+                    Use-case landing pages — "Best [Category] for [Specific
+                    Role/Industry]" — targeted ICP traffic
+                  </div>
+                </div>
+                <div class="del-item">
+                  <div class="di-label">Every Page Includes</div>
+                  <div class="di-text">
+                    CTA above the fold, social proof integration, FAQ section
+                    for long-tail keywords, full on-page SEO
+                  </div>
+                </div>
+              </div>
+              <div class="scope-note">
+                <strong>How it works:</strong> Content is delivered as a Google
+                Doc or Word file. You review and approve within 5 business days.
+                Your team publishes it. We provide exact publish instructions —
+                heading tags, URL slug, meta data — everything.
+              </div>
+            </div>
+          </details>
+
+          <details class="svc-detail">
+            <summary class="svc-detail-head">
+              <span class="num">03</span>
+              <h3>On-Page SEO</h3>
+              <div class="arrow">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                  <path
+                    d="M5 1v8M1 5h8"
+                    stroke="currentColor"
+                    stroke-width="1.4"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+            </summary>
+            <div class="svc-detail-body">
+              <p>
+                Every page we produce — and every existing page we identify as
+                an opportunity — gets fully optimised for on-page SEO. This is
+                what tells Google exactly what a page is about, who should see
+                it, and why it deserves to rank above your competitors.
+              </p>
+              <div class="del-grid">
+                <div class="del-item">
+                  <div class="di-label">Title Tags</div>
+                  <div class="di-text">
+                    Written for both rankings and click-through rate — not just
+                    keyword stuffed
+                  </div>
+                </div>
+                <div class="del-item">
+                  <div class="di-label">Meta Descriptions</div>
+                  <div class="di-text">
+                    Compelling, accurate, CTR-optimised — the first thing a
+                    searcher reads
+                  </div>
+                </div>
+                <div class="del-item">
+                  <div class="di-label">Heading Structure</div>
+                  <div class="di-text">
+                    Logical H1/H2/H3 hierarchy — keyword-informed, readable,
+                    Google-friendly
+                  </div>
+                </div>
+                <div class="del-item">
+                  <div class="di-label">Internal Linking</div>
+                  <div class="di-text">
+                    Every new page linked from relevant existing pages —
+                    distributes authority across your site
+                  </div>
+                </div>
+                <div class="del-item">
+                  <div class="di-label">Schema Markup</div>
+                  <div class="di-text">
+                    SoftwareApplication and FAQ schema where applicable —
+                    enhanced search result appearance
+                  </div>
+                </div>
+                <div class="del-item">
+                  <div class="di-label">URL Structure</div>
+                  <div class="di-text">
+                    Clean, keyword-informed URLs — no dynamic parameters, no
+                    unnecessary slugs
+                  </div>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <details class="svc-detail">
+            <summary class="svc-detail-head">
+              <span class="num">04</span>
+              <h3>Technical SEO</h3>
+              <div class="arrow">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                  <path
+                    d="M5 1v8M1 5h8"
+                    stroke="currentColor"
+                    stroke-width="1.4"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+            </summary>
+            <div class="svc-detail-body">
+              <p>
+                Technical SEO issues silently block rankings for months. A page
+                can be perfectly written with perfect keyword targeting and
+                still not rank because of a broken canonical tag or a slow LCP
+                score. We audit your site every month — not just once — because
+                issues appear as your site grows.
+              </p>
+              <div class="del-grid">
+                <div class="del-item">
+                  <div class="di-label">Monthly Crawl</div>
+                  <div class="di-text">
+                    Full site crawl every month — catches new issues before they
+                    compound
+                  </div>
+                </div>
+                <div class="del-item">
+                  <div class="di-label">Core Web Vitals</div>
+                  <div class="di-text">
+                    LCP, INP, CLS — flagged, explained, and fix instructions
+                    provided
+                  </div>
+                </div>
+                <div class="del-item">
+                  <div class="di-label">Crawlability</div>
+                  <div class="di-text">
+                    Blocked pages, noindex tags, robots.txt issues, sitemap
+                    accuracy
+                  </div>
+                </div>
+                <div class="del-item">
+                  <div class="di-label">Indexation</div>
+                  <div class="di-text">
+                    Which pages are indexed, which aren't, and why — with exact
+                    fixes
+                  </div>
+                </div>
+                <div class="del-item">
+                  <div class="di-label">Duplicate Content</div>
+                  <div class="di-text">
+                    Canonical tag issues, thin pages, near-duplicate URLs —
+                    identified and resolved
+                  </div>
+                </div>
+                <div class="del-item">
+                  <div class="di-label">Fix Report</div>
+                  <div class="di-text">
+                    Every issue categorised Critical / High / Medium / Low with
+                    exact implementation instructions
+                  </div>
+                </div>
+              </div>
+              <div class="scope-note">
+                <strong>Scope note:</strong> We identify all issues and provide
+                step-by-step fix instructions. Your development team implements
+                the fixes. For WordPress or Webflow sites, most fixes require no
+                developer and we'll guide you through them directly.
+              </div>
+            </div>
+          </details>
+
+          <details class="svc-detail">
+            <summary class="svc-detail-head">
+              <span class="num">05</span>
+              <h3>Off-Page SEO — Link Building</h3>
+              <div class="arrow">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                  <path
+                    d="M5 1v8M1 5h8"
+                    stroke="currentColor"
+                    stroke-width="1.4"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+            </summary>
+            <div class="svc-detail-body">
+              <p>
+                Domain authority is built through quality backlinks from
+                relevant websites. Without links, even perfect content struggles
+                to rank for competitive keywords. Link building is introduced at
+                Month 4 — once your content foundation is solid enough for links
+                to actually move rankings. We use three legitimate methods,
+                report on outreach activity and acquired links honestly — no
+                guaranteed minimums, no fake numbers.
+              </p>
+              <div class="del-grid">
+                <div class="del-item">
+                  <div class="di-label">Guest Posting</div>
+                  <div class="di-text">
+                    Expert articles published on established SaaS and industry
+                    publications — DR 40+ sites only
+                  </div>
+                </div>
+                <div class="del-item">
+                  <div class="di-label">Journalist Outreach</div>
+                  <div class="di-text">
+                    Responding to queries on Connectively and Qwoted — earned
+                    editorial mentions with links
+                  </div>
+                </div>
+                <div class="del-item">
+                  <div class="di-label">Broken Link Building</div>
+                  <div class="di-text">
+                    Finding broken links on competitor resource pages and
+                    offering your content as a replacement
+                  </div>
+                </div>
+                <div class="del-item">
+                  <div class="di-label">Link Quality Rule</div>
+                  <div class="di-text">
+                    DR 40+ domains relevant to your industry only. No link
+                    farms. No paid links. No PBNs.
+                  </div>
+                </div>
+              </div>
+              <div class="scope-note">
+                <strong>Realistic timeline:</strong> Link building begins at
+                Month 4, not before. The first 3 months are spent building the
+                content foundation that makes links worthwhile. Once we start,
+                outreach runs every month. Links typically begin arriving 4–8
+                weeks after outreach begins. We report on every outreach sent
+                and every link acquired — you always see the work happening.
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <hr />
+
+    <!-- HOW IT WORKS — ONBOARDING FLOW -->
+    <section>
+      <div class="wrap">
+        <div class="sh c rev">
+          <span class="label">How It Works</span>
+          <h2 class="h2">
+            From signed contract<br />to first content live in the first month.
+          </h2>
+          <p class="lead">
+            No long onboarding. No 30-day setup periods. Here's exactly what
+            happens from the moment you sign — week by week, no surprises.
+          </p>
+        </div>
+        <div class="rev" style="max-width: 680px; margin: 0 auto">
+          <div class="process-step">
+            <div class="step-num">01</div>
+            <div class="step-content">
+              <h4>Contract signed + onboarding fee paid</h4>
+              <p>
+                We send the service agreement within 24 hours of your decision.
+                The onboarding fee is due at signing. Kickoff call is scheduled
+                within 2 days of payment confirmed.
+              </p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">02</div>
+            <div class="step-content">
+              <h4>Kickoff call — Day 1 or 2</h4>
+              <p>
+                We align on your ICP, your best-fit customers, your top 3
+                competitors, and your current biggest organic opportunity. 30–45
+                minutes. No slides — just a working session. You share Google
+                Search Console access on this call.
+              </p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">03</div>
+            <div class="step-content">
+              <h4>Technical audit + keyword research — Week 1 to 2</h4>
+              <p>
+                We crawl your site, run the full technical audit, and map 50–80
+                bottom-funnel keywords. You receive both deliverables together
+                with a written strategy walkthrough by end of Week 2 — before a
+                single word of content is written.
+              </p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">04</div>
+            <div class="step-content">
+              <h4>First pages written + published — Month 1</h4>
+              <p>
+                3–4 bottom-funnel pages written, reviewed, approved, and live on
+                your site by end of Month 1. These target competitor alternative
+                and comparison keywords — visitors already in buying mode, not
+                early-stage researchers.
+              </p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">05</div>
+            <div class="step-content">
+              <h4>Monthly rhythm — from Month 2</h4>
+              <p>
+                3–4 new pages published every month. 2–3 existing pages
+                optimised. Monthly technical crawl. Report delivered by the 5th
+                of every month with a Loom video walkthrough — no jargon, no
+                vanity metrics. Link building is added from Month 4 once the
+                content foundation is solid.
+              </p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">06</div>
+            <div class="step-content">
+              <h4>Month 3 review — your decision, fully informed</h4>
+              <p>
+                At the end of the 3-month minimum, we review everything together
+                — rankings, traffic, content performance, honest assessment of
+                what's working. You decide whether to continue on a rolling
+                monthly basis. No pressure, no automatic renewal, no lock-in
+                beyond the initial 3 months.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr />
+
+    <!-- PRICING -->
+    <section id="pricing">
+      <div class="wrap">
+        <div class="sh c rev">
+          <span class="label">Pricing</span>
+          <h2 class="h2">Simple, transparent pricing.<br />No hidden fees.</h2>
+          <p class="lead">
+            One onboarding fee. One monthly retainer. All tools covered by Delta
+            — Ahrefs, Screaming Frog, reporting software. Nothing extra flows
+            through you.
+          </p>
+        </div>
+        <div class="svc-grid rev">
+          <div class="svc">
+            <div class="card-shine"></div>
+            <div class="svc-top">
+              <span class="svc-pill">Entry Point</span>
+
+              <h3 class="svc-name">SaaS SEO Audit</h3>
+              <p class="svc-tagline">
+                See what's possible before you commit.
+                <span class="svc-info-trigger">
+                  <svg
+                    class="svc-info-icon"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                  >
+                    <circle
+                      cx="8"
+                      cy="8"
+                      r="7"
+                      stroke="currentColor"
+                      stroke-width="1.3"
+                    />
+                    <path
+                      d="M8 7.2V11"
+                      stroke="currentColor"
+                      stroke-width="1.3"
+                      stroke-linecap="round"
+                    />
+                    <circle cx="8" cy="5.2" r="0.8" fill="currentColor" />
+                  </svg>
+                  <span class="svc-tooltip"
+                    >A complete diagnosis of your organic growth opportunity. We
+                    go through your entire site — technical foundation, keyword
+                    gaps, competitor content, and conversion funnel — and hand
+                    you a prioritised action plan you can act on immediately,
+                    with or without us.</span
+                  >
+                </span>
+              </p>
+            </div>
+            <div class="svc-features">
+              <div class="svc-features-label">What's included</div>
+              <ul class="chk">
+                <li><span class="chk-ic">✓</span> Full technical SEO audit</li>
+                <li>
+                  <span class="chk-ic">✓</span> Keyword gap analysis (50–100
+                  keywords)
+                </li>
+                <li>
+                  <span class="chk-ic">✓</span> Competitor content analysis
+                </li>
+                <li>
+                  <span class="chk-ic">✓</span> AI search visibility assessment
+                </li>
+                <li>
+                  <span class="chk-ic">✓</span> Prioritized action plan with fix
+                  instructions
+                </li>
+                <li><span class="chk-ic">✓</span> Delivered in 5–7 days</li>
+              </ul>
+            </div>
+            <div class="svc-footer">
+              <div class="svc-price">
+                <div
+                  style="font-size: 12px; color: var(--t3); margin-bottom: 4px"
+                >
+                  Fixed
+                </div>
+                <span class="p-num">₹25,000</span>
+                <span class="p-per">· One-time</span>
+              </div>
+              <a
+                href="./contact.html"
+                class="btn btn-ghost"
+                style="width: 100%; justify-content: center"
+              >
+                Request Audit
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <path
+                    d="M2 6h8M6.5 2.5l3.5 3.5-3.5 3.5"
+                    stroke="currentColor"
+                    stroke-width="1.3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="svc feat">
+            <div class="card-shine"></div>
+            <div class="svc-popular-badge">Most Popular</div>
+            <div class="svc-top">
+              <span class="svc-pill">Core Service</span>
+
+              <h3 class="svc-name">3-Month Growth Retainer</h3>
+              <p class="svc-tagline">
+                Full-stack SEO tied to your MRR.
+                <span class="svc-info-trigger">
+                  <svg
+                    class="svc-info-icon"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                  >
+                    <circle
+                      cx="8"
+                      cy="8"
+                      r="7"
+                      stroke="currentColor"
+                      stroke-width="1.3"
+                    />
+                    <path
+                      d="M8 7.2V11"
+                      stroke="currentColor"
+                      stroke-width="1.3"
+                      stroke-linecap="round"
+                    />
+                    <circle cx="8" cy="5.2" r="0.8" fill="currentColor" />
+                  </svg>
+                  <span class="svc-tooltip"
+                    >Full-stack SEO implementation. Technical fixes, 3 to 4
+                    bottom-funnel pages published every month, on-page
+                    optimisation of existing pages, monthly reporting, and
+                    direct access to the founder doing the work — all tied to
+                    your trial signups and MRR.</span
+                  >
+                </span>
+              </p>
+            </div>
+            <div class="svc-features">
+              <div class="svc-features-label">Everything included</div>
+              <div class="chk-cols">
+                <ul class="chk">
+                  <li><span class="chk-ic">✓</span> Everything in the audit</li>
+                  <li>
+                    <span class="chk-ic">✓</span> 3-4 SEO-optimized pages
+                    published monthly
+                  </li>
+                  <li>
+                    <span class="chk-ic">✓</span> On-page optimisation — 2 to 3
+                    existing pages monthly
+                  </li>
+                  <li>
+                    <span class="chk-ic">✓</span> Technical SEO audit every
+                    month with fix instructions
+                  </li>
+                </ul>
+                <ul class="chk">
+                  <li>
+                    <span class="chk-ic">✓</span> AI search optimisation
+                    included
+                  </li>
+                  <li>
+                    <span class="chk-ic">✓</span> Monthly revenue report + Loom
+                    walkthrough by the 5th
+                  </li>
+                  <li>
+                    <span class="chk-ic">✓</span> Live weekly dashboard — see
+                    everything we're doing
+                  </li>
+                  <li>
+                    <span class="chk-ic">✓</span> Direct WhatsApp and email
+                    access to the founder
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="svc-footer">
+              <div class="svc-price">
+                <div
+                  style="font-size: 12px; color: var(--t3); margin-bottom: 4px"
+                >
+                  Starting at
+                </div>
+                <span class="p-num">₹50,000</span>
+                <span class="p-per">/mo · 3-month min</span>
+              </div>
+              <a
+                href="./contact.html"
+                class="btn btn-primary"
+                style="width: 100%; justify-content: center"
+              >
+                Start Now
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <path
+                    d="M2 6h8M6.5 2.5l3.5 3.5-3.5 3.5"
+                    stroke="currentColor"
+                    stroke-width="1.3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <p
+          class="small"
+          style="margin-top: 20px; text-align: center; color: var(--t3)"
+        >
+          Price varies based on website size and complexity.
+        </p>
+      </div>
+    </section>
+
+    <hr />
+
+    <!-- IS DELTA RIGHT FOR YOU -->
+    <section>
+      <div class="wrap">
+        <div class="sh c rev">
+          <span class="label">Is Delta Right For You?</span>
+          <h2 class="h2">We're selective about<br />who we work with.</h2>
+          <p class="lead">
+            Delta works best for specific kinds of SaaS companies. Be honest
+            with yourself about which column you're in.
+          </p>
+        </div>
+        <div class="fit-grid rev">
+          <div class="fit-card yes">
+            <p class="fit-title">You're a great fit</p>
+            <div class="fit-row">
+              <span class="fit-ic">✓</span
+              ><span
+                >B2B SaaS product with a free trial or demo as your primary
+                conversion goal</span
+              >
+            </div>
+            <div class="fit-row">
+              <span class="fit-ic">✓</span
+              ><span
+                >Have paying customers and basic product-market fit — SEO works
+                best when you already know who you're selling to</span
+              >
+            </div>
+            <div class="fit-row">
+              <span class="fit-ic">✓</span
+              ><span
+                >Have a live product with real users and want organic search as
+                your primary or additional acquisition channel</span
+              >
+            </div>
+            <div class="fit-row">
+              <span class="fit-ic">✓</span
+              ><span
+                >Willing to publish content and implement technical fixes on
+                your site</span
+              >
+            </div>
+            <div class="fit-row">
+              <span class="fit-ic">✓</span
+              ><span
+                >Can commit to a 3-month minimum to let SEO show results</span
+              >
+            </div>
+          </div>
+          <div class="fit-card no">
+            <p class="fit-title">We're probably not the right fit</p>
+            <div class="fit-row">
+              <span class="fit-ic">✕</span
+              ><span
+                >E-commerce, local businesses, D2C, or non-SaaS products</span
+              >
+            </div>
+            <div class="fit-row">
+              <span class="fit-ic">✕</span
+              ><span>Pre-launch with no product built or validated yet</span>
+            </div>
+            <div class="fit-row">
+              <span class="fit-ic">✕</span
+              ><span
+                >Need results in under 30 days — SEO doesn't work that way</span
+              >
+            </div>
+            <div class="fit-row">
+              <span class="fit-ic">✕</span
+              ><span
+                >Want an agency that works completely independently with zero
+                involvement from your side</span
+              >
+            </div>
+            <div class="fit-row">
+              <span class="fit-ic">✕</span
+              ><span
+                >Looking for the cheapest possible option — we focus on quality,
+                not volume</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section style="padding-bottom: 110px">
+      <div class="wrap">
+        <div class="cta-box rev">
+          <div class="cta-glow"></div>
+          <span
+            class="label"
+            style="
+              display: block;
+              margin-bottom: 14px;
+              color: rgba(147, 197, 253, 0.65);
+            "
+            >Next Step</span
+          >
+          <h2 class="h2">
+            Not sure which option fits?<br />Start with the free audit call.
+          </h2>
+          <p class="lead">
+            30 minutes. We'll look at your site live, find 3 specific issues,
+            and tell you honestly which service makes sense — or whether SEO is
+            even the right channel for you right now.
+          </p>
+          <div class="cta-acts">
+            <a href="./audit.html" class="btn btn-primary btn-lg">
+              Book Free Audit Call
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+                <path
+                  d="M2 6.5h9M7.5 3l3 3.5-3 3.5"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
+            <a href="./about.html" class="btn btn-ghost btn-lg">About Delta</a>
+          </div>
+          <p class="cta-fine">
+            Free · No commitment · Response within 24 hours
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap">
+        <div class="ft-grid">
+          <div>
+            <a href="/" class="logo">
+              <div class="logo-icon">
+                <svg width="13" height="11" viewBox="0 0 13 11" fill="none">
+                  <path d="M6.5 0.5L12.5 10.5H0.5L6.5 0.5Z" fill="#080808" />
+                </svg>
+              </div>
+              <span class="logo-name">Delta</span>
+            </a>
+            <p class="ft-desc">
+              SaaS SEO agency helping B2B SaaS companies grow organic MRR
+              through strategic SEO.
+            </p>
+          </div>
+          <div class="ft-links">
+            <div class="ft-col">
+              <p class="ft-ch">Company</p>
+              <ul>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./how-it-works.html">How It Works</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+              </ul>
+            </div>
+            <div class="ft-col">
+              <p class="ft-ch">Services</p>
+              <ul>
+                <li><a href="./services.html">SaaS SEO</a></li>
+                <li><a href="./audit.html">SEO Audit</a></li>
+              </ul>
+            </div>
+            <div class="ft-col">
+              <p class="ft-ch">Connect</p>
+              <ul>
+                <li>
+                  <a href="https://x.com/nitindevelops" target="_blank"
+                    >X / Twitter</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/nitin-delta"
+                    target="_blank"
+                    >LinkedIn</a
+                  >
+                </li>
+                <li><a href="mailto:nitincarpenter2006@gmail.com">Email</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="ft-bot">
+          <p>© 2026 Delta. All rights reserved.</p>
+          <p>
+            Built by
+            <a
+              href="https://x.com/nitindevelops"
+              style="color: var(--t2); text-decoration: none"
+              >Nitin Carpenter</a
+            >
+            · India
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      // Expandable service details
+      document.querySelectorAll(".svc-detail").forEach((el) => {
+        el.addEventListener("toggle", () => {
+          if (el.open) {
+            document.querySelectorAll(".svc-detail[open]").forEach((other) => {
+              if (other !== el) other.removeAttribute("open");
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

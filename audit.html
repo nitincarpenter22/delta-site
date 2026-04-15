@@ -1,0 +1,805 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Free SEO Audit — Delta SaaS SEO Agency</title>
+    <meta
+      name="description"
+      content="Find out exactly what's holding your organic growth back. Book a free 30-minute SEO audit call with Delta."
+    />
+    <link rel="icon" type="image/png" href="./assets/delta-favicon.png" />
+    <link rel="canonical" href="https://letdelta.com/audit" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Geist:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.1fr;
+        gap: 64px;
+        align-items: start;
+      }
+
+      /* ── Form ── */
+      .field {
+        margin-bottom: 16px;
+      }
+      .field label {
+        display: block;
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--t2);
+        font-family: var(--fh);
+        margin-bottom: 7px;
+        letter-spacing: 0.01em;
+      }
+      .field input,
+      .field textarea,
+      .field select {
+        width: 100%;
+        background: var(--bg-2);
+        border: 1px solid var(--border);
+        border-radius: 9px;
+        padding: 11px 14px;
+        font-size: 13px;
+        color: var(--text);
+        font-family: var(--fb);
+        transition:
+          border-color 0.2s,
+          box-shadow 0.2s;
+        outline: none;
+        resize: vertical;
+        -webkit-appearance: none;
+        appearance: none;
+      }
+      .field input:focus,
+      .field textarea:focus,
+      .field select:focus {
+        border-color: rgba(59, 130, 246, 0.5);
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.08);
+      }
+      .field input::placeholder,
+      .field textarea::placeholder {
+        color: var(--t3);
+      }
+      .field select {
+        cursor: pointer;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 14px center;
+        padding-right: 36px;
+      }
+      .field select option {
+        background: var(--bg-2);
+        color: var(--text);
+      }
+      .field-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      .form-submit {
+        width: 100%;
+        margin-top: 6px;
+      }
+      .form-note {
+        font-size: 11px;
+        color: var(--t3);
+        text-align: center;
+        margin-top: 10px;
+      }
+
+      @media (max-width: 860px) {
+        .contact-grid {
+          grid-template-columns: 1fr;
+          gap: 48px;
+        }
+        .field-row {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="cursor-glow"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+
+    <nav id="nav">
+      <div class="nav-inner">
+        <a href="/" class="logo">
+          <div class="logo-icon">
+            <svg width="13" height="11" viewBox="0 0 13 11" fill="none">
+              <path d="M6.5 0.5L12.5 10.5H0.5L6.5 0.5Z" fill="#080808" />
+            </svg>
+          </div>
+          <span class="logo-name">Delta</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="./services.html">Services</a></li>
+          <li><a href="./how-it-works.html">How It Works</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./blog/index.html">Blog</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-right">
+          <a
+            href="./audit.html"
+            class="btn btn-primary"
+            style="padding: 8px 16px; font-size: 12px"
+          >
+            Free SEO Audit
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+              <path
+                d="M1.5 5.5h8M6.5 2.5l3 3-3 3"
+                stroke="currentColor"
+                stroke-width="1.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+        </div>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="./services.html">Services</a>
+      <a href="./how-it-works.html">How It Works</a>
+      <a href="./about.html">About</a>
+      <a href="./blog/index.html">Blog</a>
+      <a href="./contact.html">Contact</a>
+      <a href="./audit.html" class="btn btn-primary">
+        Free SEO Audit
+        <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+          <path
+            d="M1.5 5.5h8M6.5 2.5l3 3-3 3"
+            stroke="currentColor"
+            stroke-width="1.4"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </a>
+    </div>
+
+    <!-- HERO -->
+    <section id="hero" style="padding-top: 130px; padding-bottom: 52px">
+      <div class="hero-grid"></div>
+      <div class="hero-glow"></div>
+      <div class="wrap">
+        <div class="hero-inner">
+          <div
+            class="hero-badge"
+            style="
+              margin-bottom: 24px;
+              display: inline-flex;
+              justify-content: center;
+            "
+          >
+            <span class="badge-text" style="color: var(--green)"
+              >✓ Completely Free</span
+            >
+          </div>
+
+          <span
+            class="label"
+            style="display: block; margin-bottom: 12px; text-align: center"
+            >Free SEO Audit</span
+          >
+          <h1
+            class="display hero-headline"
+            style="max-width: 800px; margin: 0 auto 20px"
+          >
+            Find out exactly what's holding your organic growth back.
+          </h1>
+
+          <p class="hero-sub" style="max-width: 600px; margin: 0 auto 40px">
+            In 30 minutes, we'll look at your site live, identify three specific
+            SEO opportunities, and tell you honestly whether organic search is
+            the right acquisition channel for your stage right now. No pitch.
+            Just value.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOKING FORM SECTION -->
+    <section style="padding-top: 0; padding-bottom: 110px">
+      <div class="wrap">
+        <div class="contact-grid rev" style="align-items: center">
+          <!-- LEFT: Context / Expectations -->
+          <div class="sh c" style="text-align: left; max-width: 100%">
+            <span class="label">What's Included</span>
+            <h2 class="h2">What you walk away with from the call.</h2>
+            <p class="lead" style="font-size: 15px; margin-bottom: 30px">
+              This is not a sales call disguised as an audit. It's a working
+              session where you leave with real, specific, actionable findings —
+              regardless of whether you become a client.
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: 24px">
+              <div style="display: flex; gap: 16px">
+                <div
+                  style="
+                    flex-shrink: 0;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 10px;
+                    background: rgba(59, 130, 246, 0.1);
+                    border: 1px solid rgba(59, 130, 246, 0.3);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: var(--accent);
+                    font-family: var(--fh);
+                    font-weight: 700;
+                  "
+                >
+                  01
+                </div>
+                <div>
+                  <h3
+                    style="
+                      font-size: 15px;
+                      font-family: var(--fh);
+                      font-weight: 700;
+                      color: var(--white);
+                      margin-bottom: 6px;
+                    "
+                  >
+                    3 Specific SEO Opportunities
+                  </h3>
+                  <p
+                    style="font-size: 13px; color: var(--t2); line-height: 1.6"
+                  >
+                    We look at your actual site during the call — not a generic
+                    checklist. Three concrete opportunities identified: a
+                    keyword gap, a technical issue, or a content angle your
+                    competitors are winning on that you're not.
+                  </p>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 16px">
+                <div
+                  style="
+                    flex-shrink: 0;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 10px;
+                    background: rgba(59, 130, 246, 0.1);
+                    border: 1px solid rgba(59, 130, 246, 0.3);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: var(--accent);
+                    font-family: var(--fh);
+                    font-weight: 700;
+                  "
+                >
+                  02
+                </div>
+                <div>
+                  <h3
+                    style="
+                      font-size: 15px;
+                      font-family: var(--fh);
+                      font-weight: 700;
+                      color: var(--white);
+                      margin-bottom: 6px;
+                    "
+                  >
+                    Competitor Content Gap
+                  </h3>
+                  <p
+                    style="font-size: 13px; color: var(--t2); line-height: 1.6"
+                  >
+                    We identify one specific keyword cluster your top competitor
+                    is ranking for that you're completely absent from — and
+                    explain exactly what content is needed to compete for it.
+                  </p>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 16px">
+                <div
+                  style="
+                    flex-shrink: 0;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 10px;
+                    background: rgba(59, 130, 246, 0.1);
+                    border: 1px solid rgba(59, 130, 246, 0.3);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: var(--accent);
+                    font-family: var(--fh);
+                    font-weight: 700;
+                  "
+                >
+                  03
+                </div>
+                <div>
+                  <h3
+                    style="
+                      font-size: 15px;
+                      font-family: var(--fh);
+                      font-weight: 700;
+                      color: var(--white);
+                      margin-bottom: 6px;
+                    "
+                  >
+                    Honest Assessment of Your SEO Readiness
+                  </h3>
+                  <p
+                    style="font-size: 13px; color: var(--t2); line-height: 1.6"
+                  >
+                    Not every SaaS is ready for SEO right now. We'll tell you
+                    directly — based on your product stage, existing traffic,
+                    and competitive landscape — whether organic search is the
+                    right move at this moment.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: Form -->
+          <div class="tab-panel active" id="tab-book">
+            <div class="calendly-wrap">
+              <!--
+              INSTRUCTIONS: Replace the URL below with your actual Calendly link.
+              1. Go to calendly.com → Create a 15-minute event type
+              2. Copy your booking link (e.g. https://calendly.com/yourname/15min)
+              3. Replace the src attribute below with your link + "?embed_type=Inline&hide_event_type_details=1&hide_gdpr_banner=1"
+
+              EXAMPLE:
+              <iframe
+                src="https://calendly.com/yourname/15min?embed_type=Inline&hide_event_type_details=1&hide_gdpr_banner=1"
+                width="100%" height="520" frameborder="0">
+              </iframe>
+
+              Until you set up Calendly, the placeholder below will show.
+            -->
+              <div class="calendly-placeholder" id="cal-placeholder">
+                <div class="cal-icon">
+                  <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                    <rect
+                      x="2"
+                      y="4"
+                      width="18"
+                      height="16"
+                      rx="2"
+                      stroke="#3b82f6"
+                      stroke-width="1.4"
+                    />
+                    <path
+                      d="M7 2v4M15 2v4M2 9h18"
+                      stroke="#3b82f6"
+                      stroke-width="1.4"
+                      stroke-linecap="round"
+                    />
+                    <circle cx="7.5" cy="14" r="1" fill="#3b82f6" />
+                    <circle cx="11" cy="14" r="1" fill="#3b82f6" />
+                    <circle cx="14.5" cy="14" r="1" fill="#3b82f6" />
+                  </svg>
+                </div>
+                <h4>Book Your Free Audit Call</h4>
+                <p>
+                  Takes 2 minutes to fill out. You'll hear back within 24 hours
+                  to confirm a time.
+                </p>
+                <a
+                  href="https://calendly.com/nitincarpenter2006/free-seo-audit-booking"
+                  target="_blank"
+                  rel="noopener"
+                  class="btn btn-ghost"
+                  style="margin-top: 8px; font-size: 12px"
+                >
+                  Go to Calendly →
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS & FIT -->
+    <section style="padding-top: 20px">
+      <div class="wrap">
+        <div class="sh c rev">
+          <span class="label">The Process</span>
+          <h2 class="h2">What happens after you submit.</h2>
+          <p class="lead">Simple, fast, no friction.</p>
+        </div>
+
+        <!-- Process grid like the "road map" or how it works steps -->
+        <div
+          class="proc-grid rev"
+          style="margin-bottom: 80px; text-align: center"
+        >
+          <div
+            class="pc"
+            style="
+              align-items: center;
+              display: flex;
+              flex-direction: column;
+              text-align: center;
+            "
+          >
+            <div class="card-shine"></div>
+            <div class="pc-num" style="margin: 0 auto 16px">1</div>
+            <p class="h3" style="margin-bottom: 10px">Fill out the form</p>
+            <p class="small">
+              Takes 2 minutes. Just basic info about your product and current
+              situation — enough for us to prepare before the call.
+            </p>
+          </div>
+          <div
+            class="pc"
+            style="
+              align-items: center;
+              display: flex;
+              flex-direction: column;
+              text-align: center;
+              border-left: 1px solid var(--border);
+              border-right: 1px solid var(--border);
+            "
+          >
+            <div class="card-shine"></div>
+            <div class="pc-num" style="margin: 0 auto 16px">2</div>
+            <p class="h3" style="margin-bottom: 10px">We confirm a time</p>
+            <p class="small">
+              You'll get an email from Nitin directly within 24 hours with
+              available times across time zones. No calendar bots.
+            </p>
+          </div>
+          <div
+            class="pc"
+            style="
+              align-items: center;
+              display: flex;
+              flex-direction: column;
+              text-align: center;
+            "
+          >
+            <div class="card-shine"></div>
+            <div class="pc-num" style="margin: 0 auto 16px">3</div>
+            <p class="h3" style="margin-bottom: 10px">30-minute live call</p>
+            <p class="small">
+              We screen share, pull up your site and competitors, point out
+              specific findings and answer your questions directly.
+            </p>
+          </div>
+        </div>
+
+        <!-- FIT SECTION -->
+        <div class="two-col rev">
+          <div
+            style="
+              background: var(--bg-2);
+              border: 1px solid rgba(34, 197, 94, 0.2);
+              border-radius: var(--rl);
+              padding: 40px;
+            "
+          >
+            <div class="card-shine"></div>
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                margin-bottom: 24px;
+              "
+            >
+              <div
+                style="
+                  width: 36px;
+                  height: 36px;
+                  background: rgba(34, 197, 94, 0.1);
+                  border-radius: 10px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  color: var(--green);
+                  font-size: 16px;
+                "
+              >
+                ✓
+              </div>
+              <h3
+                style="
+                  font-size: 20px;
+                  font-family: var(--fh);
+                  font-weight: 700;
+                  color: var(--white);
+                "
+              >
+                This is for you if...
+              </h3>
+            </div>
+            <ul class="chk" style="font-size: 14px; color: var(--t2)">
+              <li style="margin-bottom: 12px">
+                <span class="chk-ic" style="color: var(--green)">✓</span> You're
+                a B2B SaaS product with a free trial or demo as your primary
+                conversion goal
+              </li>
+              <li style="margin-bottom: 12px">
+                <span class="chk-ic" style="color: var(--green)">✓</span> You
+                have paying customers and basic product-market fit
+              </li>
+              <li style="margin-bottom: 12px">
+                <span class="chk-ic" style="color: var(--green)">✓</span> You
+                have a live product with real users and want organic search as
+                your primary or additional acquisition channel
+              </li>
+              <li style="margin-bottom: 12px">
+                <span class="chk-ic" style="color: var(--green)">✓</span> You
+                want honest answers, not just reassurance
+              </li>
+              <li>
+                <span class="chk-ic" style="color: var(--green)">✓</span> You
+                can commit to a 3-month minimum to let SEO show results
+              </li>
+            </ul>
+          </div>
+
+          <div
+            style="
+              background: var(--bg-2);
+              border: 1px solid rgba(248, 113, 113, 0.2);
+              border-radius: var(--rl);
+              padding: 40px;
+            "
+          >
+            <div class="card-shine"></div>
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                margin-bottom: 24px;
+              "
+            >
+              <div
+                style="
+                  width: 36px;
+                  height: 36px;
+                  background: rgba(248, 113, 113, 0.1);
+                  border-radius: 10px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  color: var(--red);
+                  font-size: 16px;
+                "
+              >
+                ✕
+              </div>
+              <h3
+                style="
+                  font-size: 20px;
+                  font-family: var(--fh);
+                  font-weight: 700;
+                  color: var(--white);
+                "
+              >
+                This is not for you if...
+              </h3>
+            </div>
+            <ul class="chk" style="font-size: 14px; color: var(--t2)">
+              <li style="margin-bottom: 12px">
+                <span class="chk-ic" style="color: var(--red)">✕</span> You're
+                e-commerce, D2C, or a local service business
+              </li>
+              <li style="margin-bottom: 12px">
+                <span class="chk-ic" style="color: var(--red)">✕</span> You're
+                pre-launch with no product built yet
+              </li>
+              <li style="margin-bottom: 12px">
+                <span class="chk-ic" style="color: var(--red)">✕</span> You need
+                results in under 30 days — SEO doesn't work that way
+              </li>
+              <li style="margin-bottom: 12px">
+                <span class="chk-ic" style="color: var(--red)">✕</span> You want
+                an agency that works completely independently with zero
+                involvement from your side
+              </li>
+              <li>
+                <span class="chk-ic" style="color: var(--red)">✕</span> You want
+                vanity metrics (rankings for rankings' sake)
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAID AUDIT -->
+    <section style="padding-top: 40px; padding-bottom: 110px">
+      <div class="wrap">
+        <div
+          style="
+            background: var(--bg-1);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 60px 48px;
+            position: relative;
+            overflow: hidden;
+          "
+          class="rev"
+        >
+          <div class="hero-glow" style="opacity: 0.3"></div>
+
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              flex-wrap: wrap;
+              gap: 40px;
+              position: relative;
+              z-index: 1;
+            "
+          >
+            <div style="max-width: 500px">
+              <span class="label">Need more depth?</span>
+              <h2 class="h2" style="margin-bottom: 16px">
+                The full paid SEO audit.
+              </h2>
+              <p class="body" style="margin-bottom: 24px">
+                For companies that want a complete written diagnosis — not just
+                a call. A comprehensive audit of your organic opportunity
+                delivered as a prioritised action plan you can act on
+                immediately.
+              </p>
+              <div style="display: flex; gap: 20px; margin-bottom: 32px">
+                <div style="display: flex; flex-direction: column">
+                  <span
+                    style="
+                      font-family: var(--fh);
+                      font-size: 20px;
+                      font-weight: 700;
+                      color: var(--white);
+                    "
+                    >₹25,000</span
+                  >
+                  <span style="font-size: 12px; color: var(--t3)"
+                    >One-time investment</span
+                  >
+                </div>
+                <div style="width: 1px; background: var(--border)"></div>
+                <div style="display: flex; flex-direction: column">
+                  <span
+                    style="
+                      font-family: var(--fh);
+                      font-size: 20px;
+                      font-weight: 700;
+                      color: var(--white);
+                    "
+                    >5–7 days</span
+                  >
+                  <span style="font-size: 12px; color: var(--t3)"
+                    >Turnaround time</span
+                  >
+                </div>
+              </div>
+              <a href="/contact.html" class="btn btn-ghost"
+                >Request Paid Audit →</a
+              >
+            </div>
+
+            <div style="flex: 1; min-width: 300px">
+              <ul class="chk" style="color: var(--t2)">
+                <li style="margin-bottom: 14px">
+                  <span class="chk-ic">✓</span> Full technical SEO audit + fix
+                  instructions
+                </li>
+                <li style="margin-bottom: 14px">
+                  <span class="chk-ic">✓</span> Keyword gap analysis (50–100
+                  keywords)
+                </li>
+                <li style="margin-bottom: 14px">
+                  <span class="chk-ic">✓</span> Competitor content analysis
+                </li>
+                <li style="margin-bottom: 14px">
+                  <span class="chk-ic">✓</span> AI search visibility assessment
+                  (ChatGPT, etc.)
+                </li>
+                <li style="margin-bottom: 14px">
+                  <span class="chk-ic">✓</span> Conversion funnel review
+                </li>
+                <li>
+                  <span class="chk-ic">✓</span> Prioritised action plan — what
+                  to fix 1st, 2nd, 3rd
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="wrap">
+        <div class="ft-grid">
+          <div>
+            <a href="/" class="logo">
+              <div class="logo-icon">
+                <svg width="13" height="11" viewBox="0 0 13 11" fill="none">
+                  <path d="M6.5 0.5L12.5 10.5H0.5L6.5 0.5Z" fill="#080808" />
+                </svg>
+              </div>
+              <span class="logo-name">Delta</span>
+            </a>
+            <p class="ft-desc">
+              SaaS SEO agency helping B2B SaaS companies grow organic MRR
+              through strategic SEO.
+            </p>
+          </div>
+          <div class="ft-links">
+            <div class="ft-col">
+              <p class="ft-ch">Company</p>
+              <ul>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./how-it-works.html">How It Works</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+              </ul>
+            </div>
+            <div class="ft-col">
+              <p class="ft-ch">Services</p>
+              <ul>
+                <li><a href="./services.html">SaaS SEO</a></li>
+                <li><a href="./audit.html">SEO Audit</a></li>
+              </ul>
+            </div>
+            <div class="ft-col">
+              <p class="ft-ch">Connect</p>
+              <ul>
+                <li>
+                  <a href="https://x.com/nitindevelops" target="_blank"
+                    >X / Twitter</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/nitin-delta"
+                    target="_blank"
+                    >LinkedIn</a
+                  >
+                </li>
+                <li><a href="mailto:nitincarpenter2006@gmail.com">Email</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="ft-bot">
+          <p>© 2026 Delta. All rights reserved.</p>
+          <p>
+            Built by
+            <a
+              href="https://x.com/nitindevelops"
+              style="color: var(--t2); text-decoration: none"
+              >Nitin Carpenter</a
+            >
+            · India
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

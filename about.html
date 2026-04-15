@@ -1,0 +1,944 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About — Delta SaaS SEO Agency</title>
+    <meta
+      name="description"
+      content="Delta is run by Nitin Carpenter — a 19-year-old SaaS SEO specialist from Jabalpur, India, helping B2B SaaS companies build organic acquisition channels that compound."
+    />
+    <link rel="icon" type="image/png" href="./assets/delta-favicon.png" />
+    <link rel="canonical" href="https://letdelta.com/about" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Geist:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 72px;
+        align-items: start;
+      }
+      .photo-placeholder {
+        aspect-ratio: 4/5;
+        border: 1px solid var(--border);
+        border-radius: var(--rl);
+        background: var(--bg-1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        position: relative;
+        overflow: hidden;
+      }
+      .photo-placeholder::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse at 50% 0%,
+          rgba(59, 130, 246, 0.08) 0%,
+          transparent 65%
+        );
+      }
+      .photo-placeholder .ph-icon {
+        width: 56px;
+        height: 56px;
+        border: 1px solid var(--bh);
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 1;
+      }
+      .photo-placeholder p {
+        font-size: 12px;
+        color: var(--t3);
+        position: relative;
+        z-index: 1;
+        font-family: var(--fb);
+      }
+
+      .value-row {
+        display: flex;
+        gap: 16px;
+        padding: 22px 0;
+        border-bottom: 1px solid var(--border);
+      }
+      .value-row:first-child {
+        border-top: 1px solid var(--border);
+      }
+      .value-icon {
+        width: 34px;
+        height: 34px;
+        border: 1px solid var(--bh);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        margin-top: 2px;
+        transition: border-color 0.2s;
+      }
+      .value-row:hover .value-icon {
+        border-color: rgba(59, 130, 246, 0.4);
+      }
+      .value-row h4 {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--white);
+        font-family: var(--fh);
+        margin-bottom: 5px;
+      }
+      .value-row p {
+        font-size: 13px;
+        color: var(--t2);
+        line-height: 1.75;
+        font-weight: 300;
+      }
+
+      .skill-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        background: var(--border);
+        border: 1px solid var(--border);
+        border-radius: var(--rl);
+        overflow: hidden;
+      }
+      .skill-cell {
+        background: var(--bg);
+        padding: 22px 20px;
+        transition: background 0.2s;
+      }
+      .skill-cell:hover {
+        background: var(--bg-1);
+      }
+      .skill-cell .sc-label {
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 7px;
+      }
+      .skill-cell .sc-name {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--white);
+        font-family: var(--fh);
+        margin-bottom: 4px;
+      }
+      .skill-cell .sc-desc {
+        font-size: 12px;
+        color: var(--t3);
+        line-height: 1.6;
+        font-weight: 300;
+      }
+
+      .timeline {
+        position: relative;
+        padding-left: 28px;
+      }
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 7px;
+        top: 6px;
+        bottom: 6px;
+        width: 1px;
+        background: var(--border);
+      }
+      .tl-item {
+        position: relative;
+        margin-bottom: 28px;
+      }
+      .tl-item:last-child {
+        margin-bottom: 0;
+      }
+      .tl-dot {
+        position: absolute;
+        left: -28px;
+        top: 5px;
+        width: 15px;
+        height: 15px;
+        border: 1px solid var(--bh);
+        border-radius: 50%;
+        background: var(--bg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .tl-dot::after {
+        content: "";
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--accent);
+      }
+      .tl-item .tl-year {
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--accent);
+        letter-spacing: 0.08em;
+        margin-bottom: 4px;
+        text-transform: uppercase;
+      }
+      .tl-item h4 {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--white);
+        font-family: var(--fh);
+        margin-bottom: 5px;
+      }
+      .tl-item p {
+        font-size: 13px;
+        color: var(--t2);
+        line-height: 1.75;
+        font-weight: 300;
+      }
+
+      @media (max-width: 860px) {
+        .about-grid {
+          grid-template-columns: 1fr;
+          gap: 48px;
+        }
+        .skill-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 520px) {
+        .skill-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="cursor-glow"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+
+    <nav id="nav">
+      <div class="nav-inner">
+        <a href="/" class="logo">
+          <div class="logo-icon">
+            <svg width="13" height="11" viewBox="0 0 13 11" fill="none">
+              <path d="M6.5 0.5L12.5 10.5H0.5L6.5 0.5Z" fill="#080808" />
+            </svg>
+          </div>
+          <span class="logo-name">Delta</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="./services.html">Services</a></li>
+          <li><a href="./how-it-works.html">How It Works</a></li>
+          <li><a href="./about.html" style="color: var(--white)">About</a></li>
+          <li><a href="./blog/index.html">Blog</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-right">
+          <a
+            href="./audit.html"
+            class="btn btn-primary"
+            style="padding: 8px 16px; font-size: 12px"
+          >
+            Free SEO Audit
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+              <path
+                d="M1.5 5.5h8M6.5 2.5l3 3-3 3"
+                stroke="currentColor"
+                stroke-width="1.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+        </div>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="./services.html">Services</a>
+      <a href="./how-it-works.html">How It Works</a>
+      <a href="./about.html">About</a>
+      <a href="./blog/index.html">Blog</a>
+      <a href="./contact.html">Contact</a>
+      <a href="./audit.html" class="btn btn-primary">
+        Free SEO Audit
+        <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+          <path
+            d="M1.5 5.5h8M6.5 2.5l3 3-3 3"
+            stroke="currentColor"
+            stroke-width="1.4"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </a>
+    </div>
+
+    <!-- HERO -->
+    <section style="padding-top: 140px; padding-bottom: 72px">
+      <div class="wrap">
+        <div class="about-grid">
+          <div class="rev">
+            <span class="label" style="display: block; margin-bottom: 16px"
+              >About Delta</span
+            >
+            <h1 class="h2" style="margin-bottom: 20px">
+              Built by someone who<br />
+              <span style="color: var(--t3)">had to figure it out.</span>
+            </h1>
+            <p class="body" style="margin-bottom: 16px">
+              My name is Nitin Carpenter. I'm 19, I'm from Jabalpur, India, and
+              I run Delta — a SaaS SEO agency that helps B2B SaaS companies
+              build organic acquisition channels that actually compound.
+            </p>
+            <p class="body" style="margin-bottom: 16px">
+              I didn't come from a marketing family. I didn't go to a business
+              school. I started learning SEO because I had a clear goal: build
+              something that creates financial independence by the time I'm in
+              my mid-twenties — without waiting for a degree or a corporate
+              career to make that possible.
+            </p>
+            <p class="body" style="margin-bottom: 28px">
+              I studied how the best SaaS companies in the world built their
+              organic channels. Webflow, Notion, Linear, Ahrefs. I read every
+              Ahrefs case study, every Search Engine Journal breakdown, every
+              teardown thread on X. I built frameworks. I tested them. And then
+              I built Delta around the parts that actually work.
+            </p>
+            <div style="display: flex; gap: 20px; flex-wrap: wrap">
+              <div
+                style="
+                  padding: 16px 20px;
+                  border: 1px solid var(--border);
+                  border-radius: 10px;
+                  background: var(--bg-1);
+                "
+              >
+                <div
+                  style="
+                    font-family: var(--fh);
+                    font-size: 20px;
+                    font-weight: 800;
+                    color: var(--white);
+                    letter-spacing: -0.03em;
+                  "
+                >
+                  19
+                </div>
+                <div style="font-size: 11px; color: var(--t3); margin-top: 3px">
+                  Years old
+                </div>
+              </div>
+              <div
+                style="
+                  padding: 16px 20px;
+                  border: 1px solid var(--border);
+                  border-radius: 10px;
+                  background: var(--bg-1);
+                "
+              >
+                <div
+                  style="
+                    font-family: var(--fh);
+                    font-size: 20px;
+                    font-weight: 800;
+                    color: var(--white);
+                    letter-spacing: -0.03em;
+                  "
+                >
+                  SaaS-only
+                </div>
+                <div style="font-size: 11px; color: var(--t3); margin-top: 3px">
+                  Always. No exceptions.
+                </div>
+              </div>
+              <div
+                style="
+                  padding: 16px 20px;
+                  border: 1px solid var(--border);
+                  border-radius: 10px;
+                  background: var(--bg-1);
+                "
+              >
+                <div
+                  style="
+                    font-family: var(--fh);
+                    font-size: 20px;
+                    font-weight: 800;
+                    color: var(--white);
+                    letter-spacing: -0.03em;
+                  "
+                >
+                  Indore
+                </div>
+                <div style="font-size: 11px; color: var(--t3); margin-top: 3px">
+                  India — remote worldwide
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="rev">
+            <div class="photo-placeholder">
+              <div class="ph-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <circle
+                    cx="12"
+                    cy="8"
+                    r="4"
+                    stroke="#3b82f6"
+                    stroke-width="1.4"
+                  />
+                  <path
+                    d="M4 20c0-4 3.6-7 8-7s8 3 8 7"
+                    stroke="#3b82f6"
+                    stroke-width="1.4"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+              <p>Replace with your photo</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr />
+
+    <!-- WHY I BUILT DELTA -->
+    <section>
+      <div class="wrap">
+        <div class="two-col rev">
+          <div>
+            <span class="label" style="display: block; margin-bottom: 14px"
+              >Why Delta Exists</span
+            >
+            <h2 class="h2" style="margin-bottom: 18px">
+              I got tired of seeing<br />
+              <span style="color: var(--t3)">SaaS SEO done badly.</span>
+            </h2>
+          </div>
+          <div>
+            <p class="body" style="margin-bottom: 16px">
+              Most SEO agencies do the same thing: they write generic blog posts
+              about high-level topics, chase keyword volume, and report traffic
+              numbers that have no connection to revenue. Founders see a ranking
+              go up. Trials don't go up. The agency keeps the retainer.
+            </p>
+            <p class="body" style="margin-bottom: 16px">
+              The problem isn't the execution. The problem is the strategy.
+              Generic blog content ranks for awareness keywords — people who are
+              months away from buying, if ever. Bottom-funnel content —
+              competitor alternatives, direct comparisons, use-case pages —
+              ranks for people who are deciding right now.
+            </p>
+            <p class="body" style="margin-bottom: 16px">
+              Delta was built around one principle: every piece of content we
+              produce needs a direct, traceable connection to a trial signup or
+              an MRR conversation. If we can't explain how a page contributes to
+              revenue, we don't write it.
+            </p>
+            <p class="body">
+              That's not a complicated insight. But it's almost universally
+              ignored — because writing bottom-funnel content is harder,
+              requires more research, and takes longer to show results than
+              churning out 1,500-word blog posts about industry trends. We do
+              the harder thing.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr />
+
+    <!-- SKILLS -->
+    <section>
+      <div class="wrap">
+        <div class="sh rev" style="margin-bottom: 36px">
+          <span class="label">Skills &amp; Specialisation</span>
+          <h2 class="h2" style="margin-bottom: 12px">
+            What I actually know<br />how to do.
+          </h2>
+          <p class="lead" style="max-width: 500px">
+            No inflated claims. No buzzwords. These are the specific things I've
+            studied in depth and can execute at a level that moves rankings and
+            trial signups.
+          </p>
+        </div>
+        <div class="skill-grid rev">
+          <div class="skill-cell">
+            <div class="sc-label">Core</div>
+            <div class="sc-name">Keyword Research</div>
+            <div class="sc-desc">
+              Bottom-funnel keyword mapping, competitor gap analysis, search
+              intent classification, search volume to revenue probability
+              modelling
+            </div>
+          </div>
+          <div class="skill-cell">
+            <div class="sc-label">Core</div>
+            <div class="sc-name">Content Strategy</div>
+            <div class="sc-desc">
+              SaaS content architecture, pillar-cluster models, ICP-to-keyword
+              alignment, content calendar prioritisation based on revenue
+              potential
+            </div>
+          </div>
+          <div class="skill-cell">
+            <div class="sc-label">Core</div>
+            <div class="sc-name">On-Page SEO</div>
+            <div class="sc-desc">
+              Title tag and meta optimisation, heading hierarchy, schema markup
+              (SoftwareApplication, FAQ, HowTo), internal link architecture
+            </div>
+          </div>
+          <div class="skill-cell">
+            <div class="sc-label">Core</div>
+            <div class="sc-name">Technical SEO</div>
+            <div class="sc-desc">
+              Site crawlability, Core Web Vitals (LCP, INP, CLS), indexation,
+              canonical tags, robots.txt, redirect chains, site architecture
+            </div>
+          </div>
+          <div class="skill-cell">
+            <div class="sc-label">Core</div>
+            <div class="sc-name">Link Building</div>
+            <div class="sc-desc">
+              Guest posting outreach, journalist queries (Connectively, Qwoted),
+              broken link building, digital PR — DR 40+ relevant domains only
+            </div>
+          </div>
+          <div class="skill-cell">
+            <div class="sc-label">Supporting</div>
+            <div class="sc-name">SEO Reporting</div>
+            <div class="sc-desc">
+              Google Search Console analysis, GA4 organic traffic attribution,
+              UTM tracking, ranking movement reporting tied to business outcomes
+            </div>
+          </div>
+        </div>
+        <div class="skill-grid rev" style="margin-top: 2px">
+          <div class="skill-cell">
+            <div class="sc-label">Tools</div>
+            <div class="sc-name">Ahrefs</div>
+            <div class="sc-desc">
+              Keyword research, competitor backlink analysis, content gap
+              analysis, rank tracking
+            </div>
+          </div>
+          <div class="skill-cell">
+            <div class="sc-label">Tools</div>
+            <div class="sc-name">Google Search Console</div>
+            <div class="sc-desc">
+              Indexation management, performance analysis, Core Web Vitals
+              monitoring, rich result testing
+            </div>
+          </div>
+          <div class="skill-cell">
+            <div class="sc-label">Tools</div>
+            <div class="sc-name">Screaming Frog</div>
+            <div class="sc-desc">
+              Full site crawls, technical issue discovery, canonical audits,
+              redirect chain analysis
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr />
+
+    <!-- VALUES -->
+    <section>
+      <div class="wrap">
+        <div class="sh c rev">
+          <span class="label">How I Work</span>
+          <h2 class="h2">
+            The principles that run<br />every Delta engagement.
+          </h2>
+        </div>
+        <div class="rev" style="max-width: 680px; margin: 0 auto">
+          <div class="value-row">
+            <div class="value-icon">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path
+                  d="M1 10.5l3-5.5 2.5 3.5 2-2.5 3.5 4H1Z"
+                  stroke="#3b82f6"
+                  stroke-width="1.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <div>
+              <h4>Revenue before rankings</h4>
+              <p>
+                I report on trial signups, organic CAC, and MRR influence — not
+                position #4 to position #2 movements. If a metric doesn't
+                connect to a business outcome, I don't present it as progress.
+              </p>
+            </div>
+          </div>
+          <div class="value-row">
+            <div class="value-icon">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path
+                  d="M7 1v12M1 7h12"
+                  stroke="#3b82f6"
+                  stroke-width="1.2"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+            <div>
+              <h4>Honesty over comfort</h4>
+              <p>
+                If your site has a fundamental problem that will delay results,
+                I'll tell you in Week 1 — not Month 4. If a strategy isn't
+                working, I'll say so and change it. I'd rather lose a client by
+                being honest than keep one by being vague.
+              </p>
+            </div>
+          </div>
+          <div class="value-row">
+            <div class="value-icon">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <circle
+                  cx="7"
+                  cy="7"
+                  r="5.5"
+                  stroke="#3b82f6"
+                  stroke-width="1.2"
+                />
+                <path
+                  d="M7 4v3l2 2"
+                  stroke="#3b82f6"
+                  stroke-width="1.2"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+            <div>
+              <h4>No handoffs, ever</h4>
+              <p>
+                I do the work myself. Every keyword map, every page, every
+                outreach email, every report. There are no sub-contractors, no
+                content farms, no junior writers inheriting your campaign. You
+                get my full attention for every deliverable.
+              </p>
+            </div>
+          </div>
+          <div class="value-row">
+            <div class="value-icon">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <rect
+                  x="1"
+                  y="1"
+                  width="5"
+                  height="5"
+                  rx="1.2"
+                  stroke="#3b82f6"
+                  stroke-width="1.2"
+                />
+                <rect
+                  x="8"
+                  y="1"
+                  width="5"
+                  height="5"
+                  rx="1.2"
+                  stroke="#3b82f6"
+                  stroke-width="1.2"
+                />
+                <rect
+                  x="1"
+                  y="8"
+                  width="5"
+                  height="5"
+                  rx="1.2"
+                  stroke="#3b82f6"
+                  stroke-width="1.2"
+                />
+                <rect
+                  x="8"
+                  y="8"
+                  width="5"
+                  height="5"
+                  rx="1.2"
+                  stroke="#3b82f6"
+                  stroke-width="1.2"
+                />
+              </svg>
+            </div>
+            <div>
+              <h4>Systems thinking</h4>
+              <p>
+                Good SEO is a system, not a collection of tactics. Technical
+                health enables content to rank. Content earns links. Links raise
+                domain authority. Authority makes every future page rank faster.
+                I think in systems and build them accordingly.
+              </p>
+            </div>
+          </div>
+          <div class="value-row">
+            <div class="value-icon">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path
+                  d="M1 4h12M1 8h8M1 12h5"
+                  stroke="#3b82f6"
+                  stroke-width="1.2"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+            <div>
+              <h4>Clients own everything</h4>
+              <p>
+                Every piece of content, every keyword document, every report,
+                every account — it all belongs to you from day one. If you
+                cancel tomorrow, you leave with a full content library and a
+                complete keyword strategy. Nothing is locked inside Delta.
+              </p>
+            </div>
+          </div>
+          <div class="value-row">
+            <div class="value-icon">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path
+                  d="M7 1.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11z"
+                  stroke="#3b82f6"
+                  stroke-width="1.2"
+                />
+                <path
+                  d="M4.5 7.5l2 2 3-3.5"
+                  stroke="#3b82f6"
+                  stroke-width="1.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <div>
+              <h4>Selective by design</h4>
+              <p>
+                I only work with B2B SaaS companies. Not because I can't do
+                other verticals — because doing one thing exceptionally well
+                produces better results than doing everything adequately.
+                SaaS-only means every framework is built for your business
+                model.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr />
+
+    <!-- STORY TIMELINE -->
+    <section>
+      <div class="wrap">
+        <div class="two-col rev">
+          <div>
+            <span class="label" style="display: block; margin-bottom: 14px"
+              >Background</span
+            >
+            <h2 class="h2" style="margin-bottom: 18px">
+              How this<br />actually started.
+            </h2>
+            <p class="body" style="margin-bottom: 16px">
+              Not every founder story starts with a problem they desperately
+              needed to solve. Mine started with a decision — that I was not
+              going to spend the next decade waiting for a traditional path to
+              give me the independence I wanted.
+            </p>
+            <p class="body">
+              SEO chose me as much as I chose it. It's the intersection of
+              everything I find genuinely interesting: understanding how people
+              search for solutions, how Google evaluates trust and authority,
+              and how you can build a compounding asset out of language and
+              structure. Delta is the agency I would have wanted to hire if I
+              were a SaaS founder.
+            </p>
+          </div>
+          <div>
+            <div class="timeline">
+              <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-year">Early interest</div>
+                <h4>Started studying digital marketing</h4>
+                <p>
+                  Started with broad marketing study — ads, email, content.
+                  Quickly realised SEO was the only channel that compounded and
+                  didn't require ongoing capital to sustain.
+                </p>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-year">Deep study</div>
+                <h4>Narrowed to SaaS SEO specifically</h4>
+                <p>
+                  Spent months studying how the best SaaS companies — Webflow,
+                  Ahrefs, Linear — built their organic channels. Read every case
+                  study, every teardown, every keyword research framework I
+                  could find.
+                </p>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-year">Framework built</div>
+                <h4>Developed the bottom-funnel first approach</h4>
+                <p>
+                  Most SaaS SEO starts at the top of the funnel. I kept asking
+                  why — and the answer was never satisfying. Built a framework
+                  that starts with the highest-intent searches and works outward
+                  from there.
+                </p>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-year">2026</div>
+                <h4>Delta launched</h4>
+                <p>
+                  Launched Delta to put the framework to work for real SaaS
+                  companies. Every client engagement makes the methodology
+                  sharper. The goal is still the same: organic channels that
+                  compound, measured in revenue.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section style="padding-bottom: 110px">
+      <div class="wrap">
+        <div class="cta-box rev">
+          <div class="cta-glow"></div>
+          <span
+            class="label"
+            style="
+              display: block;
+              margin-bottom: 14px;
+              color: rgba(147, 197, 253, 0.65);
+            "
+            >Work Together</span
+          >
+          <h2 class="h2">
+            If that resonates —<br />let's talk about your site.
+          </h2>
+          <p class="lead">
+            Book a free 30-minute audit call. I'll look at your site live, find
+            3 specific things hurting your organic growth, and tell you honestly
+            what I'd do about them.
+          </p>
+          <div class="cta-acts">
+            <a href="./audit.html" class="btn btn-primary btn-lg">
+              Book Free Audit Call
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+                <path
+                  d="M2 6.5h9M7.5 3l3 3.5-3 3.5"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
+            <a href="./services.html" class="btn btn-ghost btn-lg"
+              >See services</a
+            >
+          </div>
+          <p class="cta-fine">
+            Free · No commitment · Response within 24 hours
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap">
+        <div class="ft-grid">
+          <div>
+            <a href="/" class="logo">
+              <div class="logo-icon">
+                <svg width="13" height="11" viewBox="0 0 13 11" fill="none">
+                  <path d="M6.5 0.5L12.5 10.5H0.5L6.5 0.5Z" fill="#080808" />
+                </svg>
+              </div>
+              <span class="logo-name">Delta</span>
+            </a>
+            <p class="ft-desc">
+              SaaS SEO agency helping B2B SaaS companies grow organic MRR
+              through strategic SEO.
+            </p>
+          </div>
+          <div class="ft-links">
+            <div class="ft-col">
+              <p class="ft-ch">Company</p>
+              <ul>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./how-it-works.html">How It Works</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+              </ul>
+            </div>
+            <div class="ft-col">
+              <p class="ft-ch">Services</p>
+              <ul>
+                <li><a href="./services.html">SaaS SEO</a></li>
+                <li><a href="./audit.html">SEO Audit</a></li>
+              </ul>
+            </div>
+            <div class="ft-col">
+              <p class="ft-ch">Connect</p>
+              <ul>
+                <li>
+                  <a href="https://x.com/nitindevelops" target="_blank"
+                    >X / Twitter</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/nitin-delta"
+                    target="_blank"
+                    >LinkedIn</a
+                  >
+                </li>
+                <li><a href="mailto:nitincarpenter2006@gmail.com">Email</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="ft-bot">
+          <p>© 2026 Delta. All rights reserved.</p>
+          <p>
+            Built by
+            <a
+              href="https://x.com/nitindevelops"
+              style="color: var(--t2); text-decoration: none"
+              >Nitin Carpenter</a
+            >
+            · India
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

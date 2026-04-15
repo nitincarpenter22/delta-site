@@ -1,0 +1,864 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--
+  ╔══════════════════════════════════════════════════════════════════════════╗
+  ║  DELTA ARTICLE TEMPLATE — HOW TO USE                                    ║
+  ║                                                                          ║
+  ║  1. Duplicate this file: cp article-template.html your-article-slug.html ║
+  ║  2. Replace everything inside [[ ]] with your content                   ║
+  ║  3. Update the meta tags at the top (title, description, canonical)     ║
+  ║  4. Write your article in the <article> section below                   ║
+  ║  5. Add it to blog/index.html (copy a .post-card block)                 ║
+  ║  6. Done — it'll look perfect automatically                             ║
+  ╚══════════════════════════════════════════════════════════════════════════╝
+  -->
+
+    <!-- ── SEO META — UPDATE THESE FOR EVERY ARTICLE ────────────────────── -->
+    <title>[[ Article Title ]] — Delta Blog</title>
+    <meta
+      name="description"
+      content="[[ 140-160 character description. Write this like an ad — it appears in Google search results. Make it compelling and specific. ]]"
+    />
+    <link rel="canonical" href="https://letdelta.com/blog/[[ url-slug ]]" />
+
+    <!-- Open Graph (social sharing preview) -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="[[ Article Title ]]" />
+    <meta property="og:description" content="[[ Same as meta description ]]" />
+    <meta
+      property="og:url"
+      content="https://letdelta.com/blog/[[ url-slug ]]"
+    />
+    <meta property="og:site_name" content="Delta — SaaS SEO Agency" />
+
+    <!-- Article schema (helps Google understand this is an article) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "[[ Article Title ]]",
+        "description": "[[ Same as meta description ]]",
+        "author": {
+          "@type": "Person",
+          "name": "Nitin Carpenter",
+          "url": "https://letdelta.com/about"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Delta",
+          "url": "https://letdelta.com"
+        },
+        "datePublished": "[[ YYYY-MM-DD ]]",
+        "dateModified": "[[ YYYY-MM-DD ]]",
+        "url": "https://letdelta.com/blog/[[ url-slug ]]"
+      }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Geist:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      /* ── Article layout ── */
+      .art-wrap {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 0 28px;
+        display: grid;
+        grid-template-columns: 1fr 280px;
+        gap: 64px;
+        align-items: start;
+      }
+
+      /* ── Article header ── */
+      .art-header {
+        max-width: 720px;
+      }
+      .art-breadcrumb {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        margin-bottom: 20px;
+        font-size: 12px;
+        color: var(--t3);
+      }
+      .art-breadcrumb a {
+        color: var(--t3);
+        text-decoration: none;
+        transition: color 0.15s;
+      }
+      .art-breadcrumb a:hover {
+        color: var(--t2);
+      }
+      .art-breadcrumb span {
+        color: var(--t3);
+      }
+      .art-meta {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+      }
+      .art-tag {
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--accent);
+        background: rgba(59, 130, 246, 0.08);
+        border: 1px solid rgba(59, 130, 246, 0.2);
+        padding: 3px 10px;
+        border-radius: 100px;
+      }
+      .art-date {
+        font-size: 12px;
+        color: var(--t3);
+      }
+      .art-reading-time {
+        font-size: 12px;
+        color: var(--t3);
+      }
+      .art-dot {
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background: var(--t3);
+      }
+      .art-header h1 {
+        font-size: clamp(26px, 3.5vw, 44px);
+        font-weight: 800;
+        color: var(--white);
+        font-family: var(--fh);
+        letter-spacing: -0.025em;
+        line-height: 1.15;
+        margin-bottom: 16px;
+      }
+      .art-header .art-intro {
+        font-size: 17px;
+        color: var(--t2);
+        line-height: 1.7;
+        font-weight: 300;
+        margin-bottom: 28px;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 28px;
+      }
+      .art-author {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .art-author .av {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: var(--bg-2);
+        border: 1px solid var(--bh);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .art-author .av-name {
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--text);
+        font-family: var(--fh);
+      }
+      .art-author .av-role {
+        font-size: 11px;
+        color: var(--t3);
+      }
+
+      /* ── Article body typography ── */
+      .art-body {
+        margin-top: 40px;
+      }
+      .art-body h2 {
+        font-size: clamp(20px, 2.5vw, 28px);
+        font-weight: 800;
+        color: var(--white);
+        font-family: var(--fh);
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+        margin: 48px 0 16px;
+        padding-top: 48px;
+        border-top: 1px solid var(--border);
+      }
+      .art-body h2:first-child {
+        margin-top: 0;
+        padding-top: 0;
+        border-top: none;
+      }
+      .art-body h3 {
+        font-size: 17px;
+        font-weight: 700;
+        color: var(--white);
+        font-family: var(--fh);
+        letter-spacing: -0.01em;
+        margin: 28px 0 10px;
+      }
+      .art-body p {
+        font-size: 15px;
+        color: var(--t2);
+        line-height: 1.85;
+        font-weight: 300;
+        margin-bottom: 18px;
+      }
+      .art-body ul,
+      .art-body ol {
+        margin: 6px 0 18px 20px;
+      }
+      .art-body li {
+        font-size: 15px;
+        color: var(--t2);
+        line-height: 1.8;
+        font-weight: 300;
+        margin-bottom: 6px;
+      }
+      .art-body ul li::marker {
+        color: var(--accent);
+      }
+      .art-body ol li::marker {
+        color: var(--accent);
+        font-weight: 700;
+        font-family: var(--fh);
+      }
+      .art-body strong {
+        color: var(--text);
+        font-weight: 600;
+      }
+      .art-body a {
+        color: var(--accent);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        transition: opacity 0.15s;
+      }
+      .art-body a:hover {
+        opacity: 0.8;
+      }
+      .art-body blockquote {
+        border-left: 3px solid var(--accent);
+        padding: 14px 20px;
+        background: rgba(59, 130, 246, 0.04);
+        border-radius: 0 8px 8px 0;
+        margin: 24px 0;
+      }
+      .art-body blockquote p {
+        font-size: 16px;
+        color: var(--text);
+        font-style: italic;
+        margin-bottom: 0;
+      }
+      .art-body code {
+        background: var(--bg-2);
+        border: 1px solid var(--border);
+        border-radius: 5px;
+        padding: 2px 7px;
+        font-size: 13px;
+        color: #93c5fd;
+        font-family: monospace;
+      }
+      .art-body pre {
+        background: var(--bg-2);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 20px;
+        overflow-x: auto;
+        margin: 20px 0;
+      }
+      .art-body pre code {
+        background: none;
+        border: none;
+        padding: 0;
+        font-size: 13px;
+        color: var(--text);
+      }
+      .art-body hr {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 40px 0;
+      }
+
+      /* Callout box */
+      .art-body .callout {
+        background: var(--bg-2);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 18px 20px;
+        margin: 24px 0;
+      }
+      .art-body .callout.blue {
+        border-color: rgba(59, 130, 246, 0.25);
+        background: rgba(59, 130, 246, 0.04);
+      }
+      .art-body .callout.green {
+        border-color: rgba(34, 197, 94, 0.2);
+        background: rgba(34, 197, 94, 0.03);
+      }
+      .art-body .callout.amber {
+        border-color: rgba(251, 191, 36, 0.2);
+        background: rgba(251, 191, 36, 0.03);
+      }
+      .art-body .callout-label {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 7px;
+      }
+      .art-body .callout.blue .callout-label {
+        color: #93c5fd;
+      }
+      .art-body .callout.green .callout-label {
+        color: #86efac;
+      }
+      .art-body .callout.amber .callout-label {
+        color: #fcd34d;
+      }
+      .art-body .callout p {
+        font-size: 14px;
+        margin-bottom: 0;
+      }
+
+      /* Inline CTA box */
+      .art-cta-inline {
+        border: 1px solid rgba(59, 130, 246, 0.25);
+        border-radius: var(--r);
+        padding: 24px 28px;
+        background: rgba(59, 130, 246, 0.03);
+        margin: 40px 0;
+        text-align: center;
+      }
+      .art-cta-inline h4 {
+        font-size: 17px;
+        font-weight: 700;
+        color: var(--white);
+        font-family: var(--fh);
+        margin-bottom: 8px;
+      }
+      .art-cta-inline p {
+        font-size: 13px;
+        color: var(--t2);
+        margin-bottom: 16px;
+      }
+
+      /* ── Sidebar ── */
+      .art-sidebar {
+        position: sticky;
+        top: 88px;
+      }
+      .sidebar-toc {
+        background: var(--bg-1);
+        border: 1px solid var(--border);
+        border-radius: var(--r);
+        padding: 20px;
+        margin-bottom: 16px;
+      }
+      .toc-label {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--t3);
+        margin-bottom: 12px;
+      }
+      .toc-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+      .toc-list a {
+        font-size: 12px;
+        color: var(--t3);
+        text-decoration: none;
+        padding: 5px 8px;
+        border-radius: 6px;
+        display: block;
+        transition: all 0.15s;
+        line-height: 1.4;
+      }
+      .toc-list a:hover {
+        color: var(--text);
+        background: var(--bg-2);
+      }
+      .toc-list a.active {
+        color: var(--accent);
+        background: rgba(59, 130, 246, 0.06);
+      }
+      .sidebar-cta {
+        background: var(--bg-1);
+        border: 1px solid rgba(59, 130, 246, 0.2);
+        border-radius: var(--r);
+        padding: 20px;
+        text-align: center;
+      }
+      .sidebar-cta h4 {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--white);
+        font-family: var(--fh);
+        margin-bottom: 8px;
+        line-height: 1.3;
+      }
+      .sidebar-cta p {
+        font-size: 12px;
+        color: var(--t2);
+        margin-bottom: 14px;
+        line-height: 1.6;
+      }
+      .sidebar-cta .btn {
+        width: 100%;
+        justify-content: center;
+        font-size: 12px;
+      }
+
+      /* ── Related posts ── */
+      .related-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        background: var(--border);
+        border: 1px solid var(--border);
+        border-radius: var(--rl);
+        overflow: hidden;
+      }
+      .related-card {
+        background: var(--bg);
+        padding: 22px 20px;
+        text-decoration: none;
+        transition: background 0.2s;
+      }
+      .related-card:hover {
+        background: var(--bg-1);
+      }
+      .rc-tag {
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 8px;
+      }
+      .rc-title {
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--white);
+        font-family: var(--fh);
+        line-height: 1.35;
+      }
+
+      @media (max-width: 960px) {
+        .art-wrap {
+          grid-template-columns: 1fr;
+        }
+        .art-sidebar {
+          display: none;
+        }
+      }
+      @media (max-width: 560px) {
+        .art-wrap {
+          padding: 0 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="cursor-glow"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+
+    <nav id="nav">
+      <div class="nav-inner">
+        <a href="/" class="logo">
+          <div class="logo-icon">
+            <svg width="13" height="11" viewBox="0 0 13 11" fill="none">
+              <path d="M6.5 0.5L12.5 10.5H0.5L6.5 0.5Z" fill="#080808" />
+            </svg>
+          </div>
+          <span class="logo-name">Delta</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="/services">Services</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/blog" style="color: var(--white)">Blog</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+        <div class="nav-right">
+          <a
+            href="/contact"
+            class="btn btn-primary"
+            style="padding: 8px 16px; font-size: 12px"
+          >
+            Free SEO Audit
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+              <path
+                d="M1.5 5.5h8M6.5 2.5l3 3-3 3"
+                stroke="currentColor"
+                stroke-width="1.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+        </div>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="/services">Services</a>
+      <a href="/about">About</a>
+      <a href="/blog">Blog</a>
+      <a href="/contact">Contact</a>
+      <a href="/contact" class="btn btn-primary"
+        >Free SEO Audit
+        <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+          <path
+            d="M1.5 5.5h8M6.5 2.5l3 3-3 3"
+            stroke="currentColor"
+            stroke-width="1.4"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          /></svg
+      ></a>
+    </div>
+
+    <!-- ── ARTICLE HEADER ─────────────────────────────────────────────────────── -->
+    <section style="padding-top: 120px; padding-bottom: 0">
+      <div class="wrap">
+        <div class="art-header rev">
+          <div class="art-breadcrumb">
+            <a href="/">Home</a>
+            <span>›</span>
+            <a href="/blog">Blog</a>
+            <span>›</span>
+            <span>[[ Category ]]</span>
+          </div>
+          <div class="art-meta">
+            <span class="art-tag">[[ Category ]]</span>
+            <div class="art-dot"></div>
+            <span class="art-date">[[ Month YYYY ]]</span>
+            <div class="art-dot"></div>
+            <span class="art-reading-time">[[ X ]] min read</span>
+          </div>
+          <h1>[[ Article Title ]]</h1>
+          <p class="art-intro">
+            [[ 2–3 sentence intro/hook that appears below the title. Make this
+            the strongest possible summary of what the reader will learn — this
+            is what gets the click from Google. ]]
+          </p>
+          <div class="art-author">
+            <div class="av">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <circle
+                  cx="7"
+                  cy="5"
+                  r="3"
+                  stroke="#3b82f6"
+                  stroke-width="1.2"
+                />
+                <path
+                  d="M2 12c0-3 2.2-5 5-5s5 2 5 5"
+                  stroke="#3b82f6"
+                  stroke-width="1.2"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+            <div>
+              <div class="av-name">Nitin Carpenter</div>
+              <div class="av-role">Founder, Delta</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ARTICLE BODY + SIDEBAR ────────────────────────────────────────────── -->
+    <section style="padding-top: 48px; padding-bottom: 80px">
+      <div class="art-wrap">
+        <!-- ARTICLE CONTENT -->
+        <article class="art-body rev">
+          <!--
+      ╔══════════════════════════════════════════════════════════════════════╗
+      ║  WRITE YOUR ARTICLE HERE                                             ║
+      ║                                                                      ║
+      ║  Available elements:                                                 ║
+      ║  <h2>Section heading</h2>   — main sections (appear in ToC)         ║
+      ║  <h3>Sub-heading</h3>        — sub-sections                         ║
+      ║  <p>Paragraph</p>            — body text                            ║
+      ║  <ul><li>item</li></ul>      — bullet list                          ║
+      ║  <ol><li>item</li></ol>      — numbered list                        ║
+      ║  <strong>bold</strong>       — emphasis                             ║
+      ║  <a href="">link</a>         — inline links                         ║
+      ║  <blockquote><p>text</p></blockquote> — pull quote                  ║
+      ║  <code>inline code</code>    — inline code                          ║
+      ║  <hr/>                       — horizontal divider                   ║
+      ║                                                                      ║
+      ║  Callout boxes:                                                      ║
+      ║  <div class="callout blue">                                         ║
+      ║    <div class="callout-label">Key Insight</div>                     ║
+      ║    <p>Content here.</p>                                              ║
+      ║  </div>                                                              ║
+      ║  (Also: class="callout green" and class="callout amber")            ║
+      ║                                                                      ║
+      ║  Inline CTA (use mid-article for conversion):                       ║
+      ║  <div class="art-cta-inline">                                       ║
+      ║    <h4>CTA headline</h4>                                            ║
+      ║    <p>Supporting text</p>                                           ║
+      ║    <a href="/contact" class="btn btn-primary">CTA button</a>        ║
+      ║  </div>                                                              ║
+      ╚══════════════════════════════════════════════════════════════════════╝
+      -->
+
+          <h2 id="section-1">[[ First Section Heading ]]</h2>
+          <p>[[ First section content. ]]</p>
+
+          <h2 id="section-2">[[ Second Section Heading ]]</h2>
+          <p>[[ Second section content. ]]</p>
+
+          <!-- Mid-article CTA — place after your 2nd or 3rd section -->
+          <div class="art-cta-inline">
+            <h4>Want this done for your SaaS?</h4>
+            <p>
+              Delta implements this exact framework for B2B SaaS companies. Book
+              a free audit call and we'll show you what it looks like for your
+              site specifically.
+            </p>
+            <a href="/contact" class="btn btn-primary">
+              Book Free Audit Call
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+                <path
+                  d="M2 6.5h9M7.5 3l3 3.5-3 3.5"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
+          </div>
+
+          <h2 id="section-3">[[ Third Section Heading ]]</h2>
+          <p>[[ Third section content. ]]</p>
+
+          <h2 id="section-4">[[ Fourth Section Heading ]]</h2>
+          <p>[[ Fourth section content. ]]</p>
+
+          <h2 id="summary">Summary</h2>
+          <p>[[ Final takeaway paragraph. ]]</p>
+          <ul>
+            <li>[[ Key takeaway 1 ]]</li>
+            <li>[[ Key takeaway 2 ]]</li>
+            <li>[[ Key takeaway 3 ]]</li>
+          </ul>
+
+          <!-- End-of-article CTA -->
+          <div class="art-cta-inline" style="margin-top: 48px">
+            <h4>
+              Running a B2B SaaS and want more trial signups from organic
+              search?
+            </h4>
+            <p>
+              Delta's free 15-minute audit call finds 3 specific issues hurting
+              your trial signups right now. No pitch — just clarity.
+            </p>
+            <a href="/contact" class="btn btn-primary">
+              Book Your Free Audit
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+                <path
+                  d="M2 6.5h9M7.5 3l3 3.5-3 3.5"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- SIDEBAR -->
+        <aside class="art-sidebar">
+          <div class="sidebar-toc">
+            <div class="toc-label">In this article</div>
+            <ul class="toc-list" id="toc">
+              <!-- Auto-generated by JS from h2 elements -->
+            </ul>
+          </div>
+          <div class="sidebar-cta">
+            <h4>Free SaaS SEO Audit</h4>
+            <p>
+              15 minutes. We find 3 specific issues hurting your trial signups —
+              live, on your site.
+            </p>
+            <a href="/contact" class="btn btn-primary">Book Free Call →</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ── RELATED POSTS ──────────────────────────────────────────────────────── -->
+    <section style="padding-top: 0; padding-bottom: 80px">
+      <div class="wrap">
+        <div class="sh rev" style="margin-bottom: 24px">
+          <span class="label">More from Delta</span>
+          <h2 class="h2" style="font-size: clamp(22px, 2.5vw, 30px)">
+            Related articles
+          </h2>
+        </div>
+        <!--
+      Update these 3 cards with real articles as you publish them.
+      Each card: update href, rc-tag, rc-title.
+    -->
+        <div class="related-grid rev">
+          <a
+            href="/blog/competitor-alternative-pages-saas"
+            class="related-card"
+          >
+            <div class="rc-tag">Content Strategy</div>
+            <div class="rc-title">
+              Competitor Alternative Pages: The Complete SaaS SEO Playbook
+            </div>
+          </a>
+          <a href="/blog" class="related-card">
+            <div class="rc-tag">Keyword Research</div>
+            <div class="rc-title">
+              Bottom-Funnel Keyword Mapping: The Framework Delta Uses for Every
+              Client
+            </div>
+          </a>
+          <a href="/blog" class="related-card">
+            <div class="rc-tag">Technical SEO</div>
+            <div class="rc-title">
+              The Technical SEO Audit Checklist for SaaS Companies in 2026
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap">
+        <div class="ft-grid">
+          <div>
+            <a href="/" class="logo">
+              <div class="logo-icon">
+                <svg width="13" height="11" viewBox="0 0 13 11" fill="none">
+                  <path d="M6.5 0.5L12.5 10.5H0.5L6.5 0.5Z" fill="#080808" />
+                </svg>
+              </div>
+              <span class="logo-name">Delta</span>
+            </a>
+            <p class="ft-desc">
+              SaaS SEO agency helping B2B SaaS companies grow organic MRR
+              through strategic SEO.
+            </p>
+          </div>
+          <div class="ft-links">
+            <div class="ft-col">
+              <p class="ft-ch">Company</p>
+              <ul>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./how-it-works.html">How It Works</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+              </ul>
+            </div>
+            <div class="ft-col">
+              <p class="ft-ch">Services</p>
+              <ul>
+                <li><a href="./services.html">SaaS SEO</a></li>
+                <li><a href="./audit.html">SEO Audit</a></li>
+              </ul>
+            </div>
+            <div class="ft-col">
+              <p class="ft-ch">Connect</p>
+              <ul>
+                <li>
+                  <a href="https://x.com/nitindevelops" target="_blank"
+                    >X / Twitter</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/nitin-delta"
+                    target="_blank"
+                    >LinkedIn</a
+                  >
+                </li>
+                <li><a href="mailto:nitincarpenter2006@gmail.com">Email</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="ft-bot">
+          <p>© 2026 Delta. All rights reserved.</p>
+          <p>
+            Built by
+            <a
+              href="https://x.com/nitindevelops"
+              style="color: var(--t2); text-decoration: none"
+              >Nitin Carpenter</a
+            >
+            · India
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script>
+      // Auto-build Table of Contents from h2 elements
+      const toc = document.getElementById("toc");
+      document.querySelectorAll(".art-body h2").forEach((h, i) => {
+        if (!h.id) h.id = "section-" + i;
+        const li = document.createElement("li");
+        const a = document.createElement("a");
+        a.href = "#" + h.id;
+        a.textContent = h.textContent;
+        li.appendChild(a);
+        toc.appendChild(li);
+      });
+
+      // Active ToC highlight on scroll
+      const tocLinks = toc.querySelectorAll("a");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              tocLinks.forEach((a) => a.classList.remove("active"));
+              const active = toc.querySelector(
+                'a[href="#' + e.target.id + '"]',
+              );
+              if (active) active.classList.add("active");
+            }
+          });
+        },
+        { rootMargin: "-20% 0px -70% 0px" },
+      );
+      document
+        .querySelectorAll(".art-body h2")
+        .forEach((h) => observer.observe(h));
+
+      // Smooth scroll for ToC links
+      tocLinks.forEach((a) => {
+        a.addEventListener("click", (e) => {
+          e.preventDefault();
+          document
+            .querySelector(a.getAttribute("href"))
+            ?.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,844 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact — Delta SaaS SEO Agency</title>
+    <meta
+      name="description"
+      content="Book a free 15-minute SEO audit call with Delta. We'll find 3 specific issues hurting your SaaS trial signups — no pitch, just clarity."
+    />
+    <link rel="icon" type="image/png" href="./assets/delta-favicon.png" />
+    <link rel="canonical" href="https://letdelta.com/contact" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Geist:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.1fr;
+        gap: 64px;
+        align-items: start;
+      }
+
+      /* ── Tabs ── */
+      .contact-tabs {
+        display: flex;
+        gap: 4px;
+        padding: 4px;
+        background: var(--bg-2);
+        border: 1px solid var(--border);
+        border-radius: 11px;
+        margin-bottom: 28px;
+      }
+      .ctab {
+        flex: 1;
+        padding: 9px 14px;
+        border-radius: 8px;
+        font-size: 13px;
+        font-weight: 600;
+        font-family: var(--fh);
+        color: var(--t2);
+        background: none;
+        border: none;
+        cursor: pointer;
+        transition: all 0.18s;
+        text-align: center;
+        letter-spacing: -0.01em;
+      }
+      .ctab.active {
+        background: var(--bg-3);
+        color: var(--white);
+        border: 1px solid var(--bh);
+      }
+      .ctab:hover:not(.active) {
+        color: var(--text);
+      }
+      .tab-panel {
+        display: none;
+      }
+      .tab-panel.active {
+        display: block;
+      }
+
+      /* ── Form ── */
+      .field {
+        margin-bottom: 16px;
+      }
+      .field label {
+        display: block;
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--t2);
+        font-family: var(--fh);
+        margin-bottom: 7px;
+        letter-spacing: 0.01em;
+      }
+      .field input,
+      .field textarea,
+      .field select {
+        width: 100%;
+        background: var(--bg-2);
+        border: 1px solid var(--border);
+        border-radius: 9px;
+        padding: 11px 14px;
+        font-size: 13px;
+        color: var(--text);
+        font-family: var(--fb);
+        transition:
+          border-color 0.2s,
+          box-shadow 0.2s;
+        outline: none;
+        resize: vertical;
+        -webkit-appearance: none;
+        appearance: none;
+      }
+      .field input:focus,
+      .field textarea:focus,
+      .field select:focus {
+        border-color: rgba(59, 130, 246, 0.5);
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.08);
+      }
+      .field input::placeholder,
+      .field textarea::placeholder {
+        color: var(--t3);
+      }
+      .field select {
+        cursor: pointer;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 14px center;
+        padding-right: 36px;
+      }
+      .field select option {
+        background: var(--bg-2);
+        color: var(--text);
+      }
+      .field-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      .form-submit {
+        width: 100%;
+        margin-top: 6px;
+      }
+      .form-note {
+        font-size: 11px;
+        color: var(--t3);
+        text-align: center;
+        margin-top: 10px;
+      }
+
+      /* ── Form success state ── */
+      .form-success {
+        display: none;
+        text-align: center;
+        padding: 40px 20px;
+      }
+      .form-success .fs-icon {
+        width: 48px;
+        height: 48px;
+        background: rgba(34, 197, 94, 0.1);
+        border: 1px solid rgba(34, 197, 94, 0.3);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 16px;
+      }
+      .form-success h3 {
+        font-size: 18px;
+        font-weight: 700;
+        font-family: var(--fh);
+        color: var(--white);
+        margin-bottom: 8px;
+      }
+      .form-success p {
+        font-size: 13px;
+        color: var(--t2);
+        line-height: 1.7;
+      }
+
+      /* ── Calendly panel ── */
+      .calendly-wrap {
+        background: var(--bg-2);
+        border: 1px solid var(--border);
+        border-radius: var(--rl);
+        overflow: hidden;
+        min-height: 480px;
+        display: flex;
+        flex-direction: column;
+      }
+      .calendly-wrap iframe {
+        flex: 1;
+        border: none;
+        min-height: 480px;
+      }
+      .calendly-placeholder {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        padding: 40px;
+        text-align: center;
+        min-height: 480px;
+      }
+      .cal-icon {
+        width: 48px;
+        height: 48px;
+        border: 1px solid rgba(59, 130, 246, 0.3);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(59, 130, 246, 0.05);
+      }
+      .calendly-placeholder h4 {
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--white);
+        font-family: var(--fh);
+      }
+      .calendly-placeholder p {
+        font-size: 13px;
+        color: var(--t2);
+        line-height: 1.7;
+        max-width: 280px;
+      }
+
+      /* ── Email panel ── */
+      .email-panel {
+        padding: 28px;
+        background: var(--bg-2);
+        border: 1px solid var(--border);
+        border-radius: var(--rl);
+      }
+      .email-big {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 20px;
+        background: var(--bg);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        margin-bottom: 20px;
+        text-decoration: none;
+        transition: border-color 0.2s;
+      }
+      .email-big:hover {
+        border-color: rgba(59, 130, 246, 0.3);
+      }
+      .email-big .eb-icon {
+        width: 40px;
+        height: 40px;
+        border: 1px solid var(--bh);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .email-big .eb-label {
+        font-size: 11px;
+        color: var(--t3);
+        margin-bottom: 2px;
+      }
+      .email-big .eb-val {
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--white);
+        font-family: var(--fh);
+        letter-spacing: -0.01em;
+      }
+      .email-expects {
+        margin-top: 20px;
+      }
+      .email-expects h4 {
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--t2);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        margin-bottom: 12px;
+      }
+      .expect-row {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        padding: 8px 0;
+        border-bottom: 1px solid var(--border);
+        font-size: 12px;
+        color: var(--t2);
+        line-height: 1.6;
+      }
+      .expect-row:last-child {
+        border-bottom: none;
+      }
+      .expect-ic {
+        color: var(--accent);
+        flex-shrink: 0;
+        font-size: 11px;
+        margin-top: 1px;
+      }
+
+      /* ── Left column ── */
+      .what-happens {
+        margin-top: 36px;
+      }
+      .what-happens h3 {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--white);
+        font-family: var(--fh);
+        margin-bottom: 16px;
+      }
+      .wh-step {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 14px;
+      }
+      .wh-num {
+        width: 22px;
+        height: 22px;
+        border: 1px solid var(--bh);
+        border-radius: 6px;
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--accent);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        margin-top: 1px;
+        font-family: var(--fh);
+      }
+      .wh-step p {
+        font-size: 13px;
+        color: var(--t2);
+        line-height: 1.7;
+        font-weight: 300;
+      }
+      .social-row {
+        display: flex;
+        gap: 8px;
+        margin-top: 20px;
+      }
+      .social-btn {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        padding: 9px 14px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--t2);
+        text-decoration: none;
+        font-family: var(--fh);
+        transition: all 0.18s;
+      }
+      .social-btn:hover {
+        border-color: var(--bh);
+        color: var(--white);
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      @media (max-width: 860px) {
+        .contact-grid {
+          grid-template-columns: 1fr;
+          gap: 48px;
+        }
+        .field-row {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="cursor-glow"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+
+    <nav id="nav">
+      <div class="nav-inner">
+        <a href="/" class="logo">
+          <div class="logo-icon">
+            <svg width="13" height="11" viewBox="0 0 13 11" fill="none">
+              <path d="M6.5 0.5L12.5 10.5H0.5L6.5 0.5Z" fill="#080808" />
+            </svg>
+          </div>
+          <span class="logo-name">Delta</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="./services.html">Services</a></li>
+          <li><a href="./how-it-works.html">How It Works</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./blog/index.html">Blog</a></li>
+          <li>
+            <a href="./contact.html" style="color: var(--white)">Contact</a>
+          </li>
+        </ul>
+        <div class="nav-right">
+          <a
+            href="./audit.html"
+            class="btn btn-primary"
+            style="padding: 8px 16px; font-size: 12px"
+          >
+            Free SEO Audit
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+              <path
+                d="M1.5 5.5h8M6.5 2.5l3 3-3 3"
+                stroke="currentColor"
+                stroke-width="1.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+        </div>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="./services.html">Services</a>
+      <a href="./how-it-works.html">How It Works</a>
+      <a href="./about.html">About</a>
+      <a href="./blog/index.html">Blog</a>
+      <a href="./contact.html">Contact</a>
+      <a href="./audit.html" class="btn btn-primary">
+        Free SEO Audit
+        <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+          <path
+            d="M1.5 5.5h8M6.5 2.5l3 3-3 3"
+            stroke="currentColor"
+            stroke-width="1.4"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </a>
+    </div>
+
+    <!-- PAGE HERO -->
+    <section style="padding-top: 130px; padding-bottom: 52px">
+      <div class="wrap">
+        <div
+          class="rev"
+          style="text-align: center; max-width: 560px; margin: 0 auto"
+        >
+          <span class="label" style="display: block; margin-bottom: 16px"
+            >Get In Touch</span
+          >
+          <h1 class="h2" style="margin-bottom: 16px">
+            Let's find out what's<br />holding your growth back.
+          </h1>
+          <p class="lead">
+            30 minutes. We'll look at your site live, identify 3 specific issues
+            costing you trial signups right now, and tell you honestly what we'd
+            do about them. Free — no pitch.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding-top: 0; padding-bottom: 110px">
+      <div class="wrap">
+        <div class="contact-grid rev">
+          <!-- ── LEFT: Context ──────────────────────────── -->
+          <div>
+            <div
+              style="
+                padding: 24px;
+                background: var(--bg-1);
+                border: 1px solid var(--border);
+                border-radius: var(--rl);
+                margin-bottom: 28px;
+              "
+            >
+              <span class="label" style="display: block; margin-bottom: 10px"
+                >Free Audit Call</span
+              >
+              <p class="small" style="margin-bottom: 0">
+                A no-pitch, no-slides 30-minute call where we look at your site
+                live. You walk away with 3 specific, actionable findings —
+                whether you hire Delta or not.
+              </p>
+            </div>
+
+            <div class="what-happens">
+              <h3>What happens on the call</h3>
+              <div class="wh-step">
+                <div class="wh-num">1</div>
+                <p>
+                  You tell me about your SaaS — ICP, current acquisition, and
+                  biggest growth challenge. 3 minutes max.
+                </p>
+              </div>
+              <div class="wh-step">
+                <div class="wh-num">2</div>
+                <p>
+                  We open your site together. I run a live keyword gap check and
+                  show you what your top 3 competitors rank for that you don't.
+                </p>
+              </div>
+              <div class="wh-step">
+                <div class="wh-num">3</div>
+                <p>
+                  I show you the 1–3 highest-impact technical or content issues
+                  I can spot in 30 minutes — with specific fix suggestions.
+                </p>
+              </div>
+              <div class="wh-step">
+                <div class="wh-num">4</div>
+                <p>
+                  If there's a fit, I'll explain what a Delta engagement would
+                  look like for your specific situation. If not, I'll tell you
+                  that too.
+                </p>
+              </div>
+            </div>
+
+            <div
+              style="
+                margin-top: 28px;
+                padding: 18px 20px;
+                background: rgba(59, 130, 246, 0.04);
+                border: 1px solid rgba(59, 130, 246, 0.15);
+                border-radius: 10px;
+              "
+            >
+              <p style="font-size: 12px; color: var(--t2); line-height: 1.7">
+                <span style="color: #93c5fd; font-weight: 600"
+                  >Response time:</span
+                >
+                All contact form submissions get a personal reply within 24
+                hours. Calendly bookings get a confirmation email immediately.
+              </p>
+            </div>
+
+            <div style="margin-top: 24px">
+              <p
+                style="
+                  font-size: 12px;
+                  color: var(--t3);
+                  margin-bottom: 10px;
+                  font-weight: 600;
+                  text-transform: uppercase;
+                  letter-spacing: 0.06em;
+                "
+              >
+                Also find me on
+              </p>
+              <div class="social-row">
+                <a
+                  href="https://x.com/nitindevelops"
+                  target="_blank"
+                  rel="noopener"
+                  class="social-btn"
+                >
+                  <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+                    <path
+                      d="M1.5 1.5l4.2 5.6L1.5 11.5h1.3l3.5-3.8 2.9 3.8H11L6.6 5.7 10.6 1.5H9.3L6 5.1 3.2 1.5H1.5z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  @nitindevelops
+                </a>
+                <a
+                  href="mailto:nitincarpenter2006@gmail.com"
+                  class="social-btn"
+                >
+                  <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+                    <rect
+                      x="1.5"
+                      y="3"
+                      width="10"
+                      height="7.5"
+                      rx="1.2"
+                      stroke="currentColor"
+                      stroke-width="1.2"
+                    />
+                    <path
+                      d="M1.5 4.5l5 3.5 5-3.5"
+                      stroke="currentColor"
+                      stroke-width="1.2"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                  Email directly
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- ── RIGHT: Tabs + Forms ─────────────────────── -->
+          <div>
+            <div class="contact-tabs">
+              <button class="ctab active" data-tab="book">
+                📅 Book a Call
+              </button>
+              <button class="ctab" data-tab="email">📧 Email Us</button>
+            </div>
+
+            <!-- TAB 1: Calendly -->
+            <div class="tab-panel active" id="tab-book">
+              <div class="calendly-wrap">
+                <!--
+              INSTRUCTIONS: Replace the URL below with your actual Calendly link.
+              1. Go to calendly.com → Create a 15-minute event type
+              2. Copy your booking link (e.g. https://calendly.com/yourname/15min)
+              3. Replace the src attribute below with your link + "?embed_type=Inline&hide_event_type_details=1&hide_gdpr_banner=1"
+
+              EXAMPLE:
+              <iframe
+                src="https://calendly.com/yourname/15min?embed_type=Inline&hide_event_type_details=1&hide_gdpr_banner=1"
+                width="100%" height="520" frameborder="0">
+              </iframe>
+
+              Until you set up Calendly, the placeholder below will show.
+            -->
+                <div class="calendly-placeholder" id="cal-placeholder">
+                  <div class="cal-icon">
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                      <rect
+                        x="2"
+                        y="4"
+                        width="18"
+                        height="16"
+                        rx="2"
+                        stroke="#3b82f6"
+                        stroke-width="1.4"
+                      />
+                      <path
+                        d="M7 2v4M15 2v4M2 9h18"
+                        stroke="#3b82f6"
+                        stroke-width="1.4"
+                        stroke-linecap="round"
+                      />
+                      <circle cx="7.5" cy="14" r="1" fill="#3b82f6" />
+                      <circle cx="11" cy="14" r="1" fill="#3b82f6" />
+                      <circle cx="14.5" cy="14" r="1" fill="#3b82f6" />
+                    </svg>
+                  </div>
+                  <h4>Book The SEO Strategy Call</h4>
+                  <p>
+                    Takes 2 minutes to fill out. You'll hear back within 24
+                    hours to confirm a time.
+                  </p>
+                  <a
+                    href="https://calendly.com/nitincarpenter2006/seo-strategy-call?embed_type=Inline&hide_event_type_details=1&hide_gdpr_banner=1"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn btn-ghost"
+                    style="margin-top: 8px; font-size: 12px"
+                  >
+                    Go to Calendly →
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- TAB 3: Direct Email -->
+            <div class="tab-panel" id="tab-email">
+              <div class="email-panel">
+                <p class="small" style="margin-bottom: 18px">
+                  Prefer to write directly? Email is fine. Use the address below
+                  — you'll get a reply from me personally, not a support ticket
+                  system.
+                </p>
+                <a
+                  href="mailto:nitincarpenter2006@gmail.com?subject=SEO Audit Request — [Your Company]&body=Hi Nitin,%0A%0AMy name is [Name] and I run [Company] — a B2B SaaS product at [website].%0A%0AWe're currently [describe your situation — e.g. relying on paid ads, no organic traffic].%0A%0AI'd like to explore what an SEO engagement with Delta would look like.%0A%0AThanks"
+                  class="email-big"
+                >
+                  <div class="eb-icon">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                      <rect
+                        x="1.5"
+                        y="3.5"
+                        width="15"
+                        height="11"
+                        rx="1.5"
+                        stroke="#3b82f6"
+                        stroke-width="1.3"
+                      />
+                      <path
+                        d="M1.5 6l7.5 5 7.5-5"
+                        stroke="#3b82f6"
+                        stroke-width="1.3"
+                        stroke-linecap="round"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="eb-label">Email address</div>
+                    <div class="eb-val">nitincarpenter2006@gmail.com</div>
+                  </div>
+                  <svg
+                    style="margin-left: auto; color: var(--t3); flex-shrink: 0"
+                    width="13"
+                    height="13"
+                    viewBox="0 0 13 13"
+                    fill="none"
+                  >
+                    <path
+                      d="M2 6.5h9M7.5 3l3 3.5-3 3.5"
+                      stroke="currentColor"
+                      stroke-width="1.4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+                <div class="email-expects">
+                  <h4>What to include in your email</h4>
+                  <div class="expect-row">
+                    <span class="expect-ic">✓</span
+                    ><span>Your company name and website URL</span>
+                  </div>
+                  <div class="expect-row">
+                    <span class="expect-ic">✓</span
+                    ><span
+                      >What you sell and who you sell it to (your ICP)</span
+                    >
+                  </div>
+                  <div class="expect-row">
+                    <span class="expect-ic">✓</span
+                    ><span
+                      >Your current organic traffic situation — high level is
+                      fine</span
+                    >
+                  </div>
+                  <div class="expect-row">
+                    <span class="expect-ic">✓</span
+                    ><span
+                      >The biggest organic challenge you want to solve</span
+                    >
+                  </div>
+                  <div class="expect-row">
+                    <span class="expect-ic">✓</span
+                    ><span>Whether you're thinking audit or full retainer</span>
+                  </div>
+                </div>
+                <div
+                  style="
+                    margin-top: 18px;
+                    padding: 14px 16px;
+                    background: rgba(59, 130, 246, 0.04);
+                    border: 1px solid rgba(59, 130, 246, 0.15);
+                    border-radius: 9px;
+                  "
+                >
+                  <p
+                    style="font-size: 12px; color: var(--t2); line-height: 1.7"
+                  >
+                    <span style="color: #93c5fd; font-weight: 600"
+                      >Response time:</span
+                    >
+                    Every email gets a personal reply within 24 hours. I'll look
+                    at your site before replying so the response is specific,
+                    not generic.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap">
+        <div class="ft-grid">
+          <div>
+            <a href="/" class="logo">
+              <div class="logo-icon">
+                <svg width="13" height="11" viewBox="0 0 13 11" fill="none">
+                  <path d="M6.5 0.5L12.5 10.5H0.5L6.5 0.5Z" fill="#080808" />
+                </svg>
+              </div>
+              <span class="logo-name">Delta</span>
+            </a>
+            <p class="ft-desc">
+              SaaS SEO agency helping B2B SaaS companies grow organic MRR
+              through strategic SEO.
+            </p>
+          </div>
+          <div class="ft-links">
+            <div class="ft-col">
+              <p class="ft-ch">Company</p>
+              <ul>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./how-it-works.html">How It Works</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+              </ul>
+            </div>
+            <div class="ft-col">
+              <p class="ft-ch">Services</p>
+              <ul>
+                <li><a href="./services.html">SaaS SEO</a></li>
+                <li><a href="./audit.html">SEO Audit</a></li>
+              </ul>
+            </div>
+            <div class="ft-col">
+              <p class="ft-ch">Connect</p>
+              <ul>
+                <li>
+                  <a href="https://x.com/nitindevelops" target="_blank"
+                    >X / Twitter</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/nitin-delta"
+                    target="_blank"
+                    >LinkedIn</a
+                  >
+                </li>
+                <li><a href="mailto:nitincarpenter2006@gmail.com">Email</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="ft-bot">
+          <p>© 2026 Delta. All rights reserved.</p>
+          <p>
+            Built by
+            <a
+              href="https://x.com/nitindevelops"
+              style="color: var(--t2); text-decoration: none"
+              >Nitin Carpenter</a
+            >
+            · India
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      // ── Tab switching ──
+      document.querySelectorAll(".ctab").forEach((tab) => {
+        tab.addEventListener("click", () => {
+          const target = tab.dataset.tab;
+          document
+            .querySelectorAll(".ctab")
+            .forEach((t) => t.classList.remove("active"));
+          document
+            .querySelectorAll(".tab-panel")
+            .forEach((p) => p.classList.remove("active"));
+          tab.classList.add("active");
+          document.getElementById("tab-" + target).classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>
