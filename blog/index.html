@@ -417,252 +417,40 @@
       </div>
     </section>
 
-    <section style="padding-top: 0; padding-bottom: 110px">
-      <div class="wrap">
-        <!-- Category filter -->
-        <div class="cat-filter rev">
-          <button class="cat-btn active" data-cat="all">All</button>
-          <button class="cat-btn" data-cat="keyword-research">
-            Keyword Research
-          </button>
-          <button class="cat-btn" data-cat="content-strategy">
-            Content Strategy
-          </button>
-          <button class="cat-btn" data-cat="technical-seo">
-            Technical SEO
-          </button>
-          <button class="cat-btn" data-cat="link-building">
-            Link Building
-          </button>
-          <button class="cat-btn" data-cat="saas-growth">SaaS Growth</button>
-        </div>
-
-        <!-- ══ FEATURED POST ══════════════════════════════════════════════════
-         To update: change href, h2, p, fp-tag, fp-date.
-         ════════════════════════════════════════════════════════════════ -->
-        <a
-          href="/blog/competitor-alternative-pages-saas"
-          class="featured-post rev"
-          data-cats="content-strategy"
+    <section style="padding-top: 40px; padding-bottom: 150px">
+      <div
+        class="wrap"
+        style="
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        "
+      >
+        <h2
+          class="rev"
+          style="
+            font-size: 40px;
+            color: var(--white);
+            font-family: var(--fh);
+            margin-bottom: 30px;
+            letter-spacing: -0.02em;
+          "
         >
-          <div class="fp-image">
-            <div class="fp-pattern"></div>
-            <div class="fp-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M3 18l4-8 4 6 3-4 5 6H3Z"
-                  stroke="#3b82f6"
-                  stroke-width="1.4"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </div>
-          </div>
-          <div class="fp-content">
-            <div class="fp-meta">
-              <span class="fp-tag">Content Strategy</span>
-              <span class="fp-date">March 2026</span>
-            </div>
-            <h2>
-              How to Write Competitor Alternative Pages That Actually Rank and
-              Convert
-            </h2>
-            <p>
-              The single highest-converting page type in SaaS SEO — and almost
-              nobody does it correctly. Here's the exact framework Delta uses,
-              with a real example breakdown.
-            </p>
-            <span class="fp-read">
-              Read article
-              <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
-                <path
-                  d="M2 5.5h7M6 2.5l3 3-3 3"
-                  stroke="currentColor"
-                  stroke-width="1.4"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </span>
-          </div>
-        </a>
-
-        <!-- ══ POST GRID ══════════════════════════════════════════════════════
-         HOW TO ADD A NEW POST:
-         1. Duplicate one <a class="post-card"> block
-         2. Update: href, data-cats, pc-tag, pc-title, pc-desc, pc-date, pc-read (reading time)
-         3. Save. Done.
-         ════════════════════════════════════════════════════════════════ -->
-        <div class="post-grid rev" id="post-grid">
-          <a
-            href="/blog/competitor-alternative-pages-saas"
-            class="post-card"
-            data-cats="content-strategy"
-          >
-            <div class="pc-tag">Content Strategy</div>
-            <div class="pc-title">
-              Competitor Alternative Pages: The Complete SaaS SEO Playbook
-            </div>
-            <div class="pc-desc">
-              Why "[Competitor] alternatives" is the most valuable keyword
-              category in SaaS — and the exact page structure that converts.
-            </div>
-            <div class="pc-footer">
-              <span class="pc-date">March 2026</span>
-              <span class="pc-read">8 min read</span>
-              <svg
-                class="pc-arrow"
-                width="11"
-                height="11"
-                viewBox="0 0 11 11"
-                fill="none"
-              >
-                <path
-                  d="M2 5.5h7M6 2.5l3 3-3 3"
-                  stroke="currentColor"
-                  stroke-width="1.4"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </div>
-          </a>
-
-          <!-- PLACEHOLDER CARDS — replace with real articles as you write them -->
-          <div
-            class="post-card"
-            style="opacity: 0.4; cursor: default"
-            data-cats="keyword-research"
-          >
-            <div class="pc-tag">Keyword Research</div>
-            <div class="pc-title">
-              Bottom-Funnel Keyword Mapping: The Framework Delta Uses for Every
-              Client
-            </div>
-            <div class="pc-desc">
-              How to find the 20 keywords that will generate 80% of your trial
-              signup traffic.
-            </div>
-            <div class="pc-footer">
-              <span class="pc-date">Coming soon</span>
-              <span class="pc-read">— min read</span>
-            </div>
-          </div>
-
-          <div
-            class="post-card"
-            style="opacity: 0.4; cursor: default"
-            data-cats="technical-seo"
-          >
-            <div class="pc-tag">Technical SEO</div>
-            <div class="pc-title">
-              The Technical SEO Audit Checklist for SaaS Companies in 2026
-            </div>
-            <div class="pc-desc">
-              Every technical issue we look for in a client audit — and exactly
-              how to fix each one.
-            </div>
-            <div class="pc-footer">
-              <span class="pc-date">Coming soon</span>
-              <span class="pc-read">— min read</span>
-            </div>
-          </div>
-
-          <div
-            class="post-card"
-            style="opacity: 0.4; cursor: default"
-            data-cats="link-building"
-          >
-            <div class="pc-tag">Link Building</div>
-            <div class="pc-title">
-              Link Building for SaaS: How to Get DR 40+ Backlinks Without a
-              Budget
-            </div>
-            <div class="pc-desc">
-              Guest posting, Connectively, and broken link building — the three
-              methods that actually work for early-stage SaaS.
-            </div>
-            <div class="pc-footer">
-              <span class="pc-date">Coming soon</span>
-              <span class="pc-read">— min read</span>
-            </div>
-          </div>
-
-          <div
-            class="post-card"
-            style="opacity: 0.4; cursor: default"
-            data-cats="content-strategy"
-          >
-            <div class="pc-tag">Content Strategy</div>
-            <div class="pc-title">
-              SaaS vs [SaaS]: How to Write Comparison Pages That Rank in the Top
-              5
-            </div>
-            <div class="pc-desc">
-              The page structure, the keyword strategy, and the one mistake that
-              makes most comparison pages invisible.
-            </div>
-            <div class="pc-footer">
-              <span class="pc-date">Coming soon</span>
-              <span class="pc-read">— min read</span>
-            </div>
-          </div>
-
-          <div
-            class="post-card"
-            style="opacity: 0.4; cursor: default"
-            data-cats="saas-growth"
-          >
-            <div class="pc-tag">SaaS Growth</div>
-            <div class="pc-title">
-              Why Your SaaS Blog Gets Traffic But No Trials (And How to Fix It)
-            </div>
-            <div class="pc-desc">
-              The awareness-funnel trap that kills SaaS SEO ROI — and the
-              bottom-funnel pivot that changes everything.
-            </div>
-            <div class="pc-footer">
-              <span class="pc-date">Coming soon</span>
-              <span class="pc-read">— min read</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Newsletter inline CTA -->
-        <div class="nl-banner rev" style="margin-top: 2px">
-          <div class="nl-text">
-            <h3>Get new articles in your inbox.</h3>
-            <p>
-              Practical SaaS SEO — no fluff, no AI summaries. Published when
-              there's something worth saying.
-            </p>
-          </div>
-          <div class="nl-form">
-            <!--
-          INSTRUCTIONS: Replace with your email platform embed.
-          Options: Mailchimp, ConvertKit, Beehiiv (recommended — free, great deliverability)
-          Until set up, this mailto fallback works fine.
-        -->
-            <input
-              type="email"
-              id="nl-email"
-              placeholder="you@yourcompany.com"
+          Coming soon..
+        </h2>
+        <a href="../index.html" class="btn btn-primary rev">
+          Back to Homepage
+          <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+            <path
+              d="M1.5 5.5h8M6.5 2.5l3 3-3 3"
+              stroke="currentColor"
+              stroke-width="1.4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             />
-            <a
-              href="#"
-              class="btn btn-primary"
-              onclick="
-                window.location =
-                  'mailto:hello@letdelta.com?subject=Subscribe&body=Please add me to your list: ' +
-                  document.getElementById('nl-email').value;
-                return false;
-              "
-            >
-              Subscribe
-            </a>
-          </div>
-        </div>
+          </svg>
+        </a>
       </div>
     </section>
 
@@ -714,7 +502,7 @@
                     >LinkedIn</a
                   >
                 </li>
-                <li><a href="mailto:nitincarpenter2006@gmail.com">Email</a></li>
+                <li><a href="mailto:hello@letdelta.com">Email</a></li>
               </ul>
             </div>
           </div>
